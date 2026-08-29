@@ -1,0 +1,37 @@
+# Build results
+bin/
+obj/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.suo
+
+# Visual Studio Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# NuGet
+packages/
+
+# Generated files
+GeneratedFiles/
+
+# Publish output
+publish/
+
+# Temporary files
+*.tmp
+*.temp
