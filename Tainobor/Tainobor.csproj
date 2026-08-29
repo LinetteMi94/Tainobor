@@ -7,4 +7,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Assessments\" />
+      <Folder Include="Characters\NPCs\" />
+      <Folder Include="Characters\Students\" />
+      <Folder Include="Characters\Teachers\" />
+      <Folder Include="Interfaces\" />
+      <Folder Include="Locations\Academy\" />
+      <Folder Include="Locations\Outside\" />
+      <Folder Include="Subjects\" />
+    </ItemGroup>
+
 </Project>
