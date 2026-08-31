@@ -1,5 +1,6 @@
 ﻿using Tainobor.Input;
 using Tainobor.GameMessages;
+using Tainobor.Test;
 
 namespace Tainobor.Menus;
 
@@ -19,8 +20,7 @@ public static class TestMenu
        if (choice == 1)
        {
            WelcomeMessages.ShowFacultyMessages();
-           Console.WriteLine("Нажми любую клавишу для продолжения...");
-           Console.ReadKey();
+           Messages.Key();
        }
     }
     
@@ -29,6 +29,11 @@ public static class TestMenu
     /// </summary>
     public static void ShowTestMenu()
     {
-        Messages.Print("Давай начнём тест!");
+        WelcomeMessages.ShowInAcademyMessages();
+        Messages.Key();
+        for (int i = 0; i < 12; i++)
+        {
+            FacultyTest.AskQuestion(i);
+        }
     }
 }

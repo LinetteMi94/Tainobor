@@ -3,6 +3,7 @@ using Tainobor.GameMessages;
 using Tainobor.Input;
 using Tainobor.Faculties;
 using Tainobor.Menus;
+using Tainobor.Test;
 
 namespace Tainobor.Game;
 
@@ -52,7 +53,7 @@ public static class GameLoop
     private static void TakeFacultyTest()
     {
         TestMenu.ShowTestMenu();
-        _player.FacultyName = Faculty.Заговорье;
+        _player.FacultyName = FacultyTest.ChooseFaculty();
     }
     
 }

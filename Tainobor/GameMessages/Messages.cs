@@ -36,6 +36,23 @@ public abstract class Messages
     }
     
     /// <summary>
+    /// Выводит конкретное сообщение из переданного списка.
+    /// </summary>
+    /// <param name="messages">Список сообщений для поиска нужного.</param>
+    /// <param name="number">Номер нужного сообщения.</param>
+    public static void ShowThisMessage(List<string> messages, int number)
+    {
+        var message = messages[number];
+        TypeText(message);
+    }
+
+    public static void Key()
+    {
+        Console.WriteLine("Нажмите любую клавишу для продолжения...");
+        Console.ReadKey();
+    }
+    
+    /// <summary>
     /// Выводит текст в консоль с эффектом печатания.
     /// </summary>
     /// <param name="text">Текст, который необходимо вывести.</param>
