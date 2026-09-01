@@ -1,4 +1,4 @@
-﻿namespace Tainobor.Faculties;
+﻿namespace Tainobor.Enums;
 
 /// <summary>
 /// Определяет факультет, на который может быть распределён ученик.

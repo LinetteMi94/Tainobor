@@ -1,7 +1,6 @@
 ﻿using Tainobor.Characters;
 using Tainobor.GameMessages;
 using Tainobor.Input;
-using Tainobor.Faculties;
 using Tainobor.Menus;
 using Tainobor.Test;
 
@@ -12,7 +11,7 @@ namespace Tainobor.Game;
 /// </summary>
 public static class GameLoop
 {
-    private static readonly Player _player = new ();
+    private static readonly Player Player = new ();
     
     /// <summary>
     /// Запускает игру и управляет последовательностью основных игровых этапов.
@@ -20,31 +19,27 @@ public static class GameLoop
     public static void Start()
     {
         Console.Clear();
-        WelcomeMessages.ShowFirstMessages();
         CreatePlayer();
-        TestMenu.ShowAdmissionMenu();
         TakeFacultyTest();
-        Messages.Print($"Распределение завершено. \n \nПо результатам испытания тебе присвоен факультет {_player.FacultyName}. \n  \nПоздравляем, {_player.FirstName}!");
-        WelcomeMessages.ShowAdmissionMessages();
-        MainMenu.Show(_player);
+        MainMenu.Show(Player);
     }
 
     /// <summary>
     /// Создаёт персонажа игрока и запрашивает необходимые данные для его создания.
     /// </summary>
     private static void CreatePlayer()
-    {
+    { 
+        WelcomeMessages.ShowFirstMessages();
         Messages.Print("Для начала укажи своё имя:");
-        _player.FirstName = Console.ReadLine();
+        Player.FirstName = Console.ReadLine()!;
         Console.WriteLine();
         Messages.Print("А теперь фамилию:");
-        _player.LastName = Console.ReadLine();
+        Player.LastName = Console.ReadLine()!;
         Console.WriteLine();
         var textForChooseGender = "В реестре Тайнобора есть ещё одна важная запись.\nУкажи свой пол:\n1. Мужской\n2. Женский\n";
         int playerGender = InputValidator.GetValidInput(textForChooseGender,2);
-        if (playerGender == 1) _player.CharacterGender = Gender.Male;
-        else _player.CharacterGender = Gender.Female;
-        Messages.Print("Приятно познакомиться, " + _player.FirstName + " " + _player.LastName + ".\n \nТвоё имя внесено в реестр учеников Тайнобора.\n");
+        Player.CharacterGender = playerGender == 1 ? Gender.Male : Gender.Female;
+        Messages.Print("Приятно познакомиться, " + Player.FirstName + " " + Player.LastName + ".\n \nТвоё имя внесено в реестр учеников Тайнобора.\n");
     }
 
     /// <summary>
@@ -52,8 +47,10 @@ public static class GameLoop
     /// </summary>
     private static void TakeFacultyTest()
     {
-        TestMenu.ShowTestMenu();
-        _player.FacultyName = FacultyTest.ChooseFaculty();
+        TestMenu.ShowTestMenu(Player);
+        Player.FacultyName = FacultyTest.ChooseFaculty();
+        Console.Clear();
+        Messages.Print($"Распределение завершено. \n \nПо результатам испытания тебе присвоен факультет {Player.FacultyName}. \n  \nПоздравляем, {Player.FirstName}!");
+        WelcomeMessages.ShowAdmissionMessages();
     }
-    
 }

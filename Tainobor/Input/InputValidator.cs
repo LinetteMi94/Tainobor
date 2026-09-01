@@ -14,11 +14,11 @@ public static class InputValidator
     /// <param name="text">Строка, введённая пользователем.</param>
     /// <param name="max">Максимально допустимое значение.</param>
     /// <returns>Корректное числовое значение.</returns>
-    public static int GetValidInput(string text, int max)
+    public static int GetValidInput(string? text, int max)
     {
         while (true)
         {
-            Messages.Print(text);
+            if (text!=null) Messages.Print(text);
             string? input = Console.ReadLine();
 
             if (int.TryParse(input, out var choice) && (choice >= 1 && choice <= max))

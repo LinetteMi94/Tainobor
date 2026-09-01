@@ -20,13 +20,13 @@ public abstract class Messages
     /// Выводит сообщение на консоль.
     /// </summary>
     /// <param name="message">Сообщение, которое необходимо вывести.</param>
-    public static void Print(string message) => TypeText(message);
+    public static void Print(string? message) => TypeText(message);
     
     /// <summary>
     /// Выводит все сообщения из переданного списка.
     /// </summary>
     /// <param name="messages">Список сообщений для вывода.</param>
-    protected static void ShowAllMessages(List<string> messages)
+    public static void ShowAllMessages(List<string> messages)
     {
         foreach (var message in messages)
         {

@@ -1,4 +1,5 @@
-﻿using Tainobor.Input;
+﻿using Tainobor.Characters;
+using Tainobor.Input;
 using Tainobor.GameMessages;
 using Tainobor.Test;
 
@@ -13,7 +14,7 @@ public static class TestMenu
     /// <summary>
     /// Отображает меню перед распределением на факультет.
     /// </summary>
-    public static void ShowAdmissionMenu()
+    public static void ShowTestMenu(Player player)
     {
        var choice =
             InputValidator.GetValidInput("Что ты хочешь сделать? \n1. Узнать о факультетах \n2. Пройти распределительный тест", 2);
@@ -22,18 +23,8 @@ public static class TestMenu
            WelcomeMessages.ShowFacultyMessages();
            Messages.Key();
        }
-    }
-    
-    /// <summary>
-    /// Отображает меню вступительного теста.
-    /// </summary>
-    public static void ShowTestMenu()
-    {
-        WelcomeMessages.ShowInAcademyMessages();
-        Messages.Key();
-        for (int i = 0; i < 12; i++)
-        {
-            FacultyTest.AskQuestion(i);
-        }
+       WelcomeMessages.ShowInAcademyMessages();
+       Messages.Key();
+       FacultyTest.Start(player);
     }
 }
