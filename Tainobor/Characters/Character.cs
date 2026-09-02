@@ -4,7 +4,7 @@
 /// Представляет базового персонажа академии и содержит общие характеристики,
 /// присущие игроку и другим персонажам.
 /// </summary>
-public class Character
+public abstract class Character
 {
     public string Name { get; private set; }
     public string LastName { get; private set; }

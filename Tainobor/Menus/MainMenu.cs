@@ -1,13 +1,12 @@
 ﻿using Tainobor.Characters;
+using Tainobor.Characters.Teachers;
 
 namespace Tainobor.Menus;
 
-public class MainMenu
+public static class MainMenu
 {
-    private static Player _player;
-    
     public static void Show(Player player)
     {
-        _player =  player;
+        
     }
 }
