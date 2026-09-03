@@ -1,10 +1,10 @@
-﻿namespace Tainobor.Characters;
+﻿namespace Tainobor.Enums;
 
 /// <summary>
 /// Определяет пол персонажа.
 /// </summary>
 public enum Gender
 {
-    Male,
-    Female
+    Мужской,
+    Женский
 }

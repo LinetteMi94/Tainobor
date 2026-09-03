@@ -4,6 +4,7 @@ using Tainobor.Input;
 using Tainobor.Locations;
 using Tainobor.Menus;
 using Tainobor.Test;
+using Tainobor.Enums;
 
 namespace Tainobor.Game;
 
@@ -21,8 +22,8 @@ public static class GameLoop
     public static void Start()
     {
         Console.Clear();
-        CreatePlayer();
-        TakeFacultyTest();
+        //CreatePlayer();
+        //TakeFacultyTest();
         CreateSchool();
         MainMenu.Show(_player);
     }
@@ -41,14 +42,18 @@ public static class GameLoop
         Console.WriteLine();
         var textForChooseGender = "В реестре Тайнобора есть ещё одна важная запись.\nУкажи свой пол:\n1. Мужской\n2. Женский\n";
         int playerGender = InputValidator.GetValidInput(textForChooseGender,2);
-        _player.CharacterGender = playerGender == 1 ? Gender.Male : Gender.Female;
+        _player.CharacterGender = playerGender == 1 ? Gender.Мужской : Gender.Женский;
         Messages.Print("Приятно познакомиться, " + _player.FirstName + " " + _player.LastName + ".\n \nТвоё имя внесено в реестр учеников Тайнобора.\n");
     }
     
     private static void CreateSchool()
     {
         School.AddSubjects();
-        
+        foreach(var subject in School.Subjects)
+        {
+            Console.WriteLine($"{subject.Name} - {subject.Teacher.Name} {subject.Teacher.LastName} {subject
+                .Teacher.CharacterGender.ToString()} ");
+        }
     }
 
     /// <summary>
