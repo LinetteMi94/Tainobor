@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Звероведение
+/// <summary>
+/// Представляет учебный предмет «Звероведение» в Академии Тайнобор.
+/// </summary>
 public class MagicalCreatures : Subject
 {
     public override string Name => "Звероведение";

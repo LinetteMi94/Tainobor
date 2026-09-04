@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Летопись магического мира
+/// <summary>
+/// Представляет учебный предмет «Летопись магического мира» в Академии Тайнобор.
+/// </summary>
 public class MagicHistory : Subject
 {
     public override string Name => "Летопись магического мира";

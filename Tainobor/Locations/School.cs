@@ -1,14 +1,16 @@
-﻿using Tainobor.Subjects;
+﻿using System.Collections.Generic;
+using Tainobor.Subjects;
 using Tainobor.Characters.Teachers;
 
 namespace Tainobor.Locations;
 
-public class School
+public abstract class School
 {
-    public List<Subject> Subjects { get; set; } = new();
-    public List<Teacher> Teachers { get; set; } = new();
+    
+    public static List<Subject> Subjects { get; set; } = new();
+    public static List<Teacher> Teachers { get; set; } = new();
 
-    public void AddSubjects()
+    public static void CreateAcademy()
     {
         Teachers = TeacherRepository.CreateTeachers();
         Subjects = SubjectRepository.CreateSubjects();

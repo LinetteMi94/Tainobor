@@ -1,7 +1,12 @@
-﻿using Tainobor.Enums;
+﻿using System;
+using System.Collections.Generic;
+using Tainobor.Enums;
 
 namespace Tainobor.Characters.Teachers;
 
+/// <summary>
+/// Предоставляет доступ к преподавателям Академии Тайнобор и управляет их созданием.
+/// </summary>
 public static class TeacherRepository
 {
     private static List<Teacher> Teachers { get; } = new();
@@ -65,6 +70,10 @@ public static class TeacherRepository
     private static void CreateWitchcraftTeacher() => WitchcraftTeacher = CreateTeacher();
     
 
+    /// <summary>
+    /// Создаёт нового преподавателя со случайным именем и фамилией.
+    /// </summary>
+    /// <returns>Созданный преподаватель.</returns>
     private static Teacher CreateTeacher()
     {
         Teacher tempTeacher = new Teacher();
@@ -84,6 +93,11 @@ public static class TeacherRepository
         Teachers.Add(tempTeacher);
         return tempTeacher;
     }
+    
+    /// <summary>
+    /// Создаёт преподавателей Академии Тайнобор.
+    /// </summary>
+    /// <returns>Список созданных преподавателей.</returns>
     public static List<Teacher> CreateTeachers()
     {
         CreateAlchemyTeacher();

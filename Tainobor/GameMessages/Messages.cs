@@ -1,4 +1,8 @@
-﻿namespace Tainobor.GameMessages;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+
+namespace Tainobor.GameMessages;
 
 /// <summary>
 /// Представляет базовый класс для сообщений, используемых в игре.

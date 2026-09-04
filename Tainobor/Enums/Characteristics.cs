@@ -1,5 +1,8 @@
 ﻿namespace Tainobor.Enums;
 
+/// <summary>
+/// Определяет характеристики персонажа.
+/// </summary>
 public enum Characteristics
 {
     Трудолюбие,

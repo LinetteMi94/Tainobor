@@ -1,8 +1,13 @@
-﻿namespace Tainobor.Subjects;
+﻿using System.Collections.Generic;
 
+namespace Tainobor.Subjects;
+
+/// <summary>
+/// Предоставляет доступ к учебным предметам Академии Тайнобор и управляет их созданием.
+/// </summary>
 public static class SubjectRepository
 {
-    private static List<Subject> Subjects { get; } = new();
+    public static List<Subject> Subjects { get; } = new();
     public static Alchemy Alchemy { get; } = new ();
     public static ArtifactCrafting ArtifactCrafting { get; } = new ();
     public static Divination Divination { get; } = new ();

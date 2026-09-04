@@ -1,4 +1,6 @@
-﻿namespace Tainobor.Test;
+﻿using System.Collections.Generic;
+
+namespace Tainobor.Test;
 
 /// <summary>
 /// Представляет вопрос теста и список вариантов ответа. 

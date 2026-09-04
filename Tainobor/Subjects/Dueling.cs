@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Поединки
+/// <summary>
+/// Представляет учебный предмет «Поединки» в Академии Тайнобор.
+/// </summary>
 public class Dueling : Subject
 {
     public override string Name => "Поединки";

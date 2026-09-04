@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Домоводство
+/// <summary>
+/// Представляет учебный предмет «Домоводство» в Академии Тайнобор.
+/// </summary>
 public class PracticalMagic : Subject
 {
     public override string Name => "Домоводство";

@@ -2,9 +2,12 @@
 
 namespace Tainobor.Subjects;
 
-public class Subject
+/// <summary>
+/// Представляет базовый класс для учебных предметов Академии Тайнобор.
+/// </summary>
+public abstract class Subject
 {
     
-    public virtual string Name { get; }
-    public virtual Teacher Teacher { get; }
+    public abstract string Name { get; }
+    public abstract Teacher Teacher { get; }
 }

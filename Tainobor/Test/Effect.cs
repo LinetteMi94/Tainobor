@@ -1,4 +1,6 @@
-﻿namespace Tainobor.Test;
+﻿using System;
+
+namespace Tainobor.Test;
 
 /// <summary>
 /// Представляет эффект, который изменяет определённое значение на указанное количество.

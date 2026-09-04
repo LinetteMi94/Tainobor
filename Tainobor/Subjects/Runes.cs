@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Руны
+/// <summary>
+/// Представляет учебный предмет «Руны» в Академии Тайнобор.
+/// </summary>
 public class Runes : Subject
 {
     public override string Name => "Руны";

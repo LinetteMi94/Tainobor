@@ -1,4 +1,5 @@
-﻿using Tainobor.GameMessages;
+﻿using System;
+using Tainobor.GameMessages;
 
 namespace Tainobor.Input;
 

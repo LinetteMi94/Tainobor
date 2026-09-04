@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Алхимия
+/// <summary>
+/// Представляет учебный предмет «Алхимия» в Академии Тайнобор.
+/// </summary>
 public class Alchemy : Subject
 {
     public override string Name => "Алхимия";

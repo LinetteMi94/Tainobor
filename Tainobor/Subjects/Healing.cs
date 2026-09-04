@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Врачевание
+/// <summary>
+/// Представляет учебный предмет «Врачевание» в Академии Тайнобор.
+/// </summary>
 public class Healing : Subject
 {
     public override string Name => "Врачевание";

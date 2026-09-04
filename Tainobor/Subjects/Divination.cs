@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Вещевание
+/// <summary>
+/// Представляет учебный предмет «Вещевание» в Академии Тайнобор.
+/// </summary>
 public class Divination : Subject
 {
     public override string Name => "Вещевание";

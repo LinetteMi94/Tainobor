@@ -1,4 +1,5 @@
-﻿using Tainobor.Characters;
+﻿using System;
+using Tainobor.Characters;
 using Tainobor.GameMessages;
 using Tainobor.Input;
 using Tainobor.Locations;
@@ -14,7 +15,6 @@ namespace Tainobor.Game;
 public static class GameLoop
 {
     private static Player _player;
-    private static readonly School School = new ();
     
     /// <summary>
     /// Запускает игру и управляет последовательностью основных игровых этапов.
@@ -48,12 +48,7 @@ public static class GameLoop
     
     private static void CreateSchool()
     {
-        School.AddSubjects();
-        foreach(var subject in School.Subjects)
-        {
-            Console.WriteLine($"{subject.Name} - {subject.Teacher.Name} {subject.Teacher.LastName} {subject
-                .Teacher.CharacterGender.ToString()} ");
-        }
+        School.CreateAcademy();
     }
 
     /// <summary>

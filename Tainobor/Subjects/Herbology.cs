@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Травничество
+/// <summary>
+/// Представляет учебный предмет «Травничество» в Академии Тайнобор.
+/// </summary>
 public class Herbology : Subject
 {
     public override string Name => "Травничество";

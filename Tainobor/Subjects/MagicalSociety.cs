@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Мироустройство
+/// <summary>
+/// Представляет учебный предмет «Мироустройство» в Академии Тайнобор.
+/// </summary>
 public class MagicalSociety : Subject
 {
     public override string Name => "Мироустройство";

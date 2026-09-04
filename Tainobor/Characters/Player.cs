@@ -1,4 +1,5 @@
-﻿using Tainobor.Enums;
+﻿using System.Collections.Generic;
+using Tainobor.Enums;
 
 namespace Tainobor.Characters;
 

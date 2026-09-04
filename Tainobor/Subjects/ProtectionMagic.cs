@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Обережье
+/// <summary>
+/// Представляет учебный предмет «Обережье» в Академии Тайнобор.
+/// </summary>
 public class ProtectionMagic : Subject
 {
     public override string Name => "Обережье";

@@ -2,7 +2,9 @@
 
 namespace Tainobor.Subjects;
 
-//Стихиеведение
+/// <summary>
+/// Представляет учебный предмет «Стихиеведение» в Академии Тайнобор.
+/// </summary>
 public class ElementalMagic : Subject
 {
     public override string Name => "Стихиеведение";
