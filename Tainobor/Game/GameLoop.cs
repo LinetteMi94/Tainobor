@@ -25,7 +25,7 @@ public static class GameLoop
         //CreatePlayer();
         //TakeFacultyTest();
         CreateSchool();
-        MainMenu.Show(_player);
+        _player.ShowMainMenu();
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ public static class GameLoop
         _player.LastName = Console.ReadLine()!;
         Console.WriteLine();
         var textForChooseGender = "В реестре Тайнобора есть ещё одна важная запись.\nУкажи свой пол:\n1. Мужской\n2. Женский\n";
-        int playerGender = InputValidator.GetValidInput(textForChooseGender,2);
+        int playerGender = textForChooseGender.GetValidInput(2);
         _player.CharacterGender = playerGender == 1 ? Gender.Мужской : Gender.Женский;
         Messages.Print("Приятно познакомиться, " + _player.FirstName + " " + _player.LastName + ".\n \nТвоё имя внесено в реестр учеников Тайнобора.\n");
     }
@@ -56,7 +56,7 @@ public static class GameLoop
     /// </summary>
     private static void TakeFacultyTest()
     {
-        TestMenu.ShowTestMenu(_player);
+        _player.ShowTestMenu();
         _player.FacultyName = FacultyTest.ChooseFaculty();
         Console.Clear();
         Messages.Print($"Распределение завершено. \n \nПо результатам испытания тебе присвоен факультет {_player.FacultyName}. \n  \nПоздравляем, {_player.FirstName}!");

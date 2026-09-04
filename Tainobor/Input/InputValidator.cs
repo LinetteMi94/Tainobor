@@ -15,7 +15,7 @@ public static class InputValidator
     /// <param name="text">Строка, введённая пользователем.</param>
     /// <param name="max">Максимально допустимое значение.</param>
     /// <returns>Корректное числовое значение.</returns>
-    public static int GetValidInput(string? text, int max)
+    public static int GetValidInput(this string? text, int max)
     {
         while (true)
         {

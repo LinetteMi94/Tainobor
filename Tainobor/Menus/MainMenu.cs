@@ -11,7 +11,7 @@ public static class MainMenu
     /// Отображает главное меню игры для указанного игрока.
     /// </summary>
     /// <param name="player">Игрок, для которого отображается меню.</param>
-    public static void Show(Player player)
+    public static void ShowMainMenu(this Player player)
     {
         
     }

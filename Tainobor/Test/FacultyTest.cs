@@ -13,7 +13,7 @@ namespace Tainobor.Test;
 /// </summary>
 public static class FacultyTest
 {
-    private static Player _player = new Player();
+    private static Player _player = new ();
     private static List<Question> Questions { get;}=
     [
         new Question
@@ -603,7 +603,7 @@ public static class FacultyTest
     /// <summary>
     /// Запускает тестирование.
     /// </summary>
-    public static void Start(Player player)
+    public static void StartFacultyTest(this Player player)
     {
         _player = player;
         Console.Clear();
