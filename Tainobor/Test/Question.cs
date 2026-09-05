@@ -5,8 +5,8 @@ namespace Tainobor.Test;
 /// <summary>
 /// Представляет вопрос теста и список вариантов ответа. 
 /// </summary>
-public class Question
+public class Question(string text,  List<Answer> answers)
 {
-    public required string Text { get; init; }
-    public required List<Answer> Answers { get; init; }
+    public string Text { get; init; } = text;
+    public List<Answer> Answers { get; init; } = answers;
 }

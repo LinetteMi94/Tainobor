@@ -14,538 +14,296 @@ namespace Tainobor.Test;
 public static class FacultyTest
 {
     private static Player _player = new ();
+    
     private static List<Question> Questions { get;}=
     [
-        new Question
-        {
-            Text = "Ты находишь в старой теплице неизвестное растение. Что сделаешь?",
-            Answers =
+        new ("Ты находишь в старой теплице неизвестное растение. Что сделаешь?", 
+        [
+                    new Answer("1. Осторожно изучу его внешний вид и свойства.", 
+                    [
+                            new Effect(Faculty.Корнецвет, 1),
+                            new Effect(Characteristics.Трудолюбие, 1)
+                    ]),
+                    new Answer("2. Попробую выяснить, почему оно оказалось именно здесь.", 
+                    [
+                            new Effect(Faculty.Тайнор, 1),
+                            new Effect(Characteristics.Интуиция, 1)
+                    ]),
+                    new Answer("3. Понаблюдаю, как оно взаимодействует с окружающими магическими силами.", 
+                    [
+                            new Effect(Faculty.Лесоведь, 1),
+                            new Effect(Characteristics.Ловкость, 1)
+                    ]),
+                    new Answer("4. Сначала проверю, не представляет ли оно опасности для окружающих.", 
+                    [
+                            new Effect(Faculty.Живница, 1),
+                            new Effect(Characteristics.Дружелюбие, 1)
+                    ])
+        ]),
+        
+        new ("В библиотеке ты находишь книгу о магических существах. Что привлекает твоё внимание?", 
+        [
+            new Answer("1. Описание поведения и повадок существ.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Осторожно изучу его внешний вид и свойства.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Попробую выяснить, почему оно оказалось именно здесь.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Понаблюдаю, как оно взаимодействует с окружающими магическими силами.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Сначала проверю, не представляет ли оно опасности для окружающих.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                },
-            ]
-        },
+                new Effect(Faculty.Лесоведь, 1),
+                new Effect(Characteristics.Ловкость, 1)
+            ]),
+            new Answer("2. Сведения о редких растениях, которыми они питаются.", 
+            [
+                new Effect(Faculty.Корнецвет, 1),
+                new Effect(Characteristics.Трудолюбие, 1)
+            ]),
+            new Answer("3. Старые записи о заклинаниях, связанных с существами.", 
+            [
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ]),
+            new Answer("4. Неизвестные символы на полях книги.", 
+            [
+                new Effect(Faculty.Тайнор, 1),
+                new Effect(Characteristics.Интуиция, 1)
+            ])
+        ]),
+        
+        new ("На практическом занятии преподаватель предлагает освоить новое заклинание. Что для тебя важнее всего?", 
+        [
+            new Answer("1. Узнать, насколько мощным оно может стать и какую силу скрывает.", 
+            [
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ]),
+            new Answer("2. Научиться выполнять его максимально точно.", 
+            [
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ]),
+            new Answer("3. Понять принцип, по которому оно работает.", 
+            [
+                new Effect(Faculty.Тайнор, 1),
+                new Effect(Characteristics.Интуиция, 1)
+            ]),
+            new Answer( "4. Узнать, как использовать его, чтобы помочь другим.", 
+            [
+                new Effect(Faculty.Живница, 1),
+                new Effect(Characteristics.Дружелюбие, 1)
+            ])
+        ]),
+        
+        new ("Ты замечаешь, что приручённое магическое существо ведёт себя необычно.", 
+        [
+            new Answer("1. Попытаюсь понять, что оно пытается мне сообщить.", 
+            [
+                new Effect(Faculty.Лесоведь, 1),
+                new Effect(Characteristics.Ловкость, 1)
+            ]),
+            new Answer("2. Проверю, не связано ли его состояние с каким-нибудь растением или веществом.", 
+            [
+                new Effect(Faculty.Корнецвет, 1),
+                new Effect(Characteristics.Трудолюбие, 1)
+            ]),
+            new Answer("3. Поищу информацию о подобных случаях в старых книгах.", 
+            [
+                new Effect(Faculty.Тайнор, 1),
+                new Effect(Characteristics.Интуиция, 1)
+            ]),
+            new Answer( "4. Попробую успокоить его с помощью магии.", 
+            [
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ])
+        ]),
+        
+        new ("Во время прогулки начинается сильная гроза. Что ты сделаешь?", 
+        [
+            new Answer("1. Найду безопасное место и помогу тем, кто оказался неподалёку.", 
+            [
+                new Effect(Faculty.Живница, 1),
+                new Effect(Characteristics.Дружелюбие, 1)
+            ]),
+            new Answer("2. Попытаюсь понять, насколько необычна эта гроза.", 
+            [
+                new Effect(Faculty.Тайнор, 1),
+                new Effect(Characteristics.Интуиция, 1)
+            ]),
+            new Answer("3. Буду наблюдать за стихией и постараюсь почувствовать её силу.", 
+            [
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ]),
+            new Answer( "4. Проверю, как магические растения реагируют на грозу.", 
+            [
+                new Effect(Faculty.Корнецвет, 1),
+                new Effect(Characteristics.Трудолюбие, 1)
+            ])
+        ]),
 
-        new Question
-        {
-            Text = "В библиотеке ты находишь книгу о магических существах. Что привлекает твоё внимание?",
-            Answers =
+        new ("Перед тобой старый артефакт. Ты понятия не имеешь, для чего он создан.", 
+        [
+            new Answer("1. Попытаюсь найти способ активировать его.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Описание поведения и повадок существ.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Сведения о редких растениях, которыми они питаются.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Старые записи о заклинаниях, связанных с существами.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Неизвестные символы на полях книги.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 }
-                    ]
-                }
-            ]
-        },
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ]),
+            new Answer("2. Изучу символы и надписи на нём.", 
+            [
+                new Effect(Faculty.Тайнор, 1),
+                new Effect(Characteristics.Интуиция, 1)
+            ]),
+            new Answer("3. Проверю, не связан ли он с целительной магией.", 
+            [
+                new Effect(Faculty.Живница, 1),
+                new Effect(Characteristics.Дружелюбие, 1)
+            ]),
+            new Answer( "4. Попытаюсь определить, не заключена ли в нём сила какой-либо стихии.", 
+            [
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ])
+        ]),
 
-        new Question
-        {
-            Text =
-                "На практическом занятии преподаватель предлагает освоить новое заклинание. Что для тебя важнее всего?",
-            Answers =
+        new ("Какой навык ты хотел бы получить?", 
+        [
+            new Answer("1. Понимать язык магических существ.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Узнать, насколько мощным оно может стать и какую силу скрывает.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Научиться выполнять его максимально точно.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Понять принцип, по которому оно работает.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Узнать, как использовать его, чтобы помочь другим.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                }
-            ]
-        },
+                new Effect(Faculty.Лесоведь, 1),
+                new Effect(Characteristics.Ловкость, 1)
+            ]),
+            new Answer("2. Создавать сложнейшие алхимические составы.", 
+            [
+                new Effect(Faculty.Корнецвет, 1),
+                new Effect(Characteristics.Трудолюбие, 1)
+            ]),
+            new Answer("3. Управлять силой огня, воды, воздуха и земли.", 
+            [
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ]),
+            new Answer( "4. Создавать предметы, наделённые магическими свойствами.", 
+            [
+                new Effect(Faculty.Тайнор, 1),
+                new Effect(Characteristics.Интуиция, 1)
+            ])
+        ]),
+        
+        new ("Твой однокурсник случайно получил магическую травму.", 
+        [
+            new Answer("1. Немедленно попытаюсь оказать ему помощь.", 
+            [
+                new Effect(Faculty.Живница, 1),
+                new Effect(Characteristics.Дружелюбие, 1)
+            ]),
+            new Answer("2. Постараюсь определить, какое заклинание вызвало травму.", 
+            [
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ]),
+            new Answer("3. Поищу подходящее лечебное средство.", 
+            [
+                new Effect(Faculty.Корнецвет, 1),
+                new Effect(Characteristics.Трудолюбие, 1)
+            ]),
+            new Answer( "4. Попытаюсь понять, какая магическая сила могла привести к такому результату.", 
+            [
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ])
+        ]),
 
-        new Question
-        {
-            Text = "Ты замечаешь, что приручённое магическое существо ведёт себя необычно.",
-            Answers =
+        new ("У тебя появился свободный день в академии. Куда отправишься?", 
+        [
+            new Answer("1. В лечебное крыло, чтобы узнать больше о целительной магии.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Попытаюсь понять, что оно пытается мне сообщить.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Проверю, не связано ли его состояние с каким-нибудь растением или веществом.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Поищу информацию о подобных случаях в старых книгах.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Попробую успокоить его с помощью магии.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                }
-            ]
-        },
+                new Effect(Faculty.Живница, 1),
+                new Effect(Characteristics.Дружелюбие, 1)
+            ]),
+            new Answer("2. В зверинец или заповедную часть академии.", 
+            [
+                new Effect(Faculty.Лесоведь, 1),
+                new Effect(Characteristics.Ловкость, 1)
+            ]),
+            new Answer("3. На тренировочную площадку для стихийной магии.", 
+            [
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ]),
+            new Answer( "4. В зал чар, чтобы самостоятельно потренироваться в заклинаниях.", 
+            [
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ])
+        ]),
+        
+        new ("Тебе предлагают провести эксперимент. Что тебе интереснее всего?", 
+        [
+            new Answer("1. Проверить, как изменение заклинания влияет на его результат.", 
+            [
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ]),
+            new Answer("2. Исследовать неизвестное магическое вещество.", 
+            [
+                new Effect(Faculty.Корнецвет, 1),
+                new Effect(Characteristics.Трудолюбие, 1)
+            ]),
+            new Answer("3. Узнать, как магическая сила взаимодействует с окружающим миром.", 
+            [
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ]),
+            new Answer( "4. Наблюдать за реакцией магического существа.", 
+            [
+                new Effect(Faculty.Лесоведь, 1),
+                new Effect(Characteristics.Ловкость, 1)
+            ])
+        ]),
+        
+        new ("Праздничный пир уже начался. Перед тобой стол, полный самых разных блюд. Что ты возьмёшь первым?", 
+        [
+            new Answer("1. Блюдо с необычными травами и пряностями, которых ты никогда раньше не пробовал.", 
+            [
+                new Effect(Faculty.Корнецвет, 1),
+                new Effect(Characteristics.Трудолюбие, 1)
+            ]),
+            new Answer("2. Что-нибудь сладкое. Сегодня можно позволить себе маленький праздник.", 
+            [
+                new Effect(Faculty.Лесоведь, 1),
+                new Effect(Characteristics.Ловкость, 1)
+            ]),
+            new Answer("3. Блюдо, которое пахнет свежим лесом. Ты выбираешь его, надеясь почувствовать вкус чего-то настоящего и природного.", 
+            [
+                new Effect(Faculty.Живница, 1),
+                new Effect(Characteristics.Дружелюбие, 1)
+            ]),
+            new Answer( "4. Блюдо, которое никто не решается попробовать первым. Именно поэтому тебе становится интересно, что в нём такого необычного.", 
+            [
+                new Effect(Faculty.Заговорье, 1),
+                new Effect(Characteristics.Харизма, 1)
+            ])
+        ]),
 
-        new Question
-        {
-            Text = "Во время прогулки начинается сильная гроза. Что ты сделаешь?",
-            Answers =
+        new ("Что ты больше всего ценишь в жизни?", 
+        [
+            new Answer("1. Образование.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Найду безопасное место и помогу тем, кто оказался неподалёку.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Попытаюсь понять, насколько необычна эта гроза.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Буду наблюдать за стихией и постараюсь почувствовать её силу.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Проверю, как магические растения реагируют на грозу.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                }
-            ]
-        },
-
-        new Question
-        {
-            Text = "Перед тобой старый артефакт. Ты понятия не имеешь, для чего он создан.",
-            Answers =
+                new Effect(Faculty.Тайнор, 1),
+                new Effect(Characteristics.Интуиция, 1)
+            ]),
+            new Answer("2. Семья.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Попытаюсь найти способ активировать его.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Изучу символы и надписи на нём.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Проверю, не связан ли он с целительной магией.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Попытаюсь определить, не заключена ли в нём сила какой-либо стихии.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                }
-            ]
-        },
-
-        new Question
-        {
-            Text = "Какой навык ты хотел бы получить?",
-            Answers =
+                new Effect(Faculty.Лесоведь, 1),
+                new Effect(Characteristics.Ловкость, 1)
+            ]),
+            new Answer("3. Доброта.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Понимать язык магических существ.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Создавать сложнейшие алхимические составы.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Управлять силой огня, воды, воздуха и земли.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Создавать предметы, наделённые магическими свойствами.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 }
-                    ]
-                }
-            ]
-        },
-
-        new Question
-        {
-            Text = "Твой однокурсник случайно получил магическую травму.",
-            Answers =
+                new Effect(Faculty.Живница, 1),
+                new Effect(Characteristics.Дружелюбие, 1)
+            ]),
+            new Answer( "4. Свобода.", 
             [
-                new Answer
-                {
-                    AnswerText = "1. Немедленно попытаюсь оказать ему помощь.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Постараюсь определить, какое заклинание вызвало травму.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Поищу подходящее лечебное средство.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Попытаюсь понять, какая магическая сила могла привести к такому результату.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                }
-            ]
-        },
-
-        new Question
-        {
-            Text = "У тебя появился свободный день в академии. Куда отправишься?",
-            Answers =
-            [
-                new Answer
-                {
-                    AnswerText = "1. В лечебное крыло, чтобы узнать больше о целительной магии.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. В зверинец или заповедную часть академии.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. На тренировочную площадку для стихийной магии.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. В зал чар, чтобы самостоятельно потренироваться в заклинаниях.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                }
-            ]
-        },
-
-        new Question
-        {
-            Text = "Тебе предлагают провести эксперимент. Что тебе интереснее всего?",
-            Answers =
-            [
-                new Answer
-                {
-                    AnswerText = "1. Проверить, как изменение заклинания влияет на его результат.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Исследовать неизвестное магическое вещество.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Узнать, как магическая сила взаимодействует с окружающим миром.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Наблюдать за реакцией магического существа.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                }
-            ]
-        },
-
-        new Question
-        {
-            Text = "Праздничный пир уже начался. Перед тобой стол, полный самых разных блюд. Что ты возьмёшь первым?",
-            Answers =
-            [
-                new Answer
-                {
-                    AnswerText = "1. Блюдо с необычными травами и пряностями, которых ты никогда раньше не пробовал.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Корнецвет, Value = 1 },
-                        new Effect { Name = Characteristics.Трудолюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Что-нибудь сладкое. Сегодня можно позволить себе маленький праздник.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText =
-                        "3. Блюдо, которое пахнет свежим лесом. Ты выбираешь его, надеясь почувствовать вкус чего-то настоящего и природного.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText =
-                        "4. Блюдо, которое никто не решается попробовать первым. Именно поэтому тебе становится интересно, что в нём такого необычного.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Заговорье, Value = 1 },
-                        new Effect { Name = Characteristics.Харизма, Value = 1 }
-                    ]
-                }
-            ]
-        },
-
-        new Question
-        {
-            Text = "Что ты больше всего ценишь в жизни?",
-            Answers =
-            [
-                new Answer
-                {
-                    AnswerText = "1. Образование.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Тайнор, Value = 1 },
-                        new Effect { Name = Characteristics.Интуиция, Value = 1 },
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "2. Семья.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Лесоведь, Value = 1 },
-                        new Effect { Name = Characteristics.Ловкость, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "3. Доброта.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Живница, Value = 1 },
-                        new Effect { Name = Characteristics.Дружелюбие, Value = 1 }
-                    ]
-                },
-                new Answer
-                {
-                    AnswerText = "4. Свобода.",
-                    AnswerEffects = 
-                    [
-                        new Effect { Name = Faculty.Громоврат, Value = 1 },
-                        new Effect { Name = Characteristics.Сила, Value = 1 }
-                    ]
-                }
-            ]
-        }
+                new Effect(Faculty.Громоврат, 1),
+                new Effect(Characteristics.Сила, 1)
+            ])
+        ])
     ];
     
     private static readonly Dictionary<Faculty, int> FacultiesCounter = new ()

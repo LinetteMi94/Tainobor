@@ -5,8 +5,8 @@ namespace Tainobor.Test;
 /// <summary>
 /// Представляет вариант ответа на вопрос теста и связанные с ним эффекты.
 /// </summary>
-public class Answer
+public class Answer(string text, List<Effect> effects)
 {
-    public required string AnswerText { get; init; }
-    public required List<Effect> AnswerEffects { get; init; }
+    public string AnswerText { get; init; } = text;
+    public List<Effect> AnswerEffects { get; init; } =  effects;
 }

@@ -14,7 +14,7 @@ namespace Tainobor.Game;
 /// </summary>
 public static class GameLoop
 {
-    private static Player _player;
+    private static readonly Player Player = new ();
     
     /// <summary>
     /// Запускает игру и управляет последовательностью основных игровых этапов.
@@ -22,10 +22,10 @@ public static class GameLoop
     public static void Start()
     {
         Console.Clear();
-        //CreatePlayer();
-        //TakeFacultyTest();
+        CreatePlayer();
+        TakeFacultyTest();
         CreateSchool();
-        _player.ShowMainMenu();
+        Player.ShowMainMenu();
     }
 
     /// <summary>
@@ -35,15 +35,15 @@ public static class GameLoop
     { 
         WelcomeMessages.ShowFirstMessages();
         Messages.Print("Для начала укажи своё имя:");
-        _player.FirstName = Console.ReadLine()!;
+        Player.FirstName = Console.ReadLine()!;
         Console.WriteLine();
         Messages.Print("А теперь фамилию:");
-        _player.LastName = Console.ReadLine()!;
+        Player.LastName = Console.ReadLine()!;
         Console.WriteLine();
         var textForChooseGender = "В реестре Тайнобора есть ещё одна важная запись.\nУкажи свой пол:\n1. Мужской\n2. Женский\n";
         int playerGender = textForChooseGender.GetValidInput(2);
-        _player.CharacterGender = playerGender == 1 ? Gender.Мужской : Gender.Женский;
-        Messages.Print("Приятно познакомиться, " + _player.FirstName + " " + _player.LastName + ".\n \nТвоё имя внесено в реестр учеников Тайнобора.\n");
+        Player.CharacterGender = playerGender == 1 ? Gender.Мужской : Gender.Женский;
+        Messages.Print("Приятно познакомиться, " + Player.FirstName + " " + Player.LastName + ".\n \nТвоё имя внесено в реестр учеников Тайнобора.\n");
     }
     
     private static void CreateSchool()
@@ -56,10 +56,10 @@ public static class GameLoop
     /// </summary>
     private static void TakeFacultyTest()
     {
-        _player.ShowTestMenu();
-        _player.FacultyName = FacultyTest.ChooseFaculty();
+        Player.ShowTestMenu();
+        Player.FacultyName = FacultyTest.ChooseFaculty();
         Console.Clear();
-        Messages.Print($"Распределение завершено. \n \nПо результатам испытания тебе присвоен факультет {_player.FacultyName}. \n  \nПоздравляем, {_player.FirstName}!");
+        Messages.Print($"Распределение завершено. \n \nПо результатам испытания тебе присвоен факультет {Player.FacultyName}. \n  \nПоздравляем, {Player.FirstName}!");
         WelcomeMessages.ShowAdmissionMessages();
     }
 }
