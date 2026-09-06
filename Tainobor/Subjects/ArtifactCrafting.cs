@@ -8,5 +8,5 @@ namespace Tainobor.Subjects;
 public class ArtifactCrafting : Subject
 {
     public override string Name => "Артефакторика";
-    public override Teacher Teacher => TeacherRepository.ArtifactCraftingTeacher;
+    public override Teacher Teacher => TeacherRepository.ArtifactCraftingTeacher!;
 }

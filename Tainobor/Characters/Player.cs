@@ -6,13 +6,14 @@ namespace Tainobor.Characters;
 /// <summary>
 /// Представляет персонажа игрока, поступившего в академию Тайнобор.
 /// </summary>
-public class Player : Character
+public class Player(string name, string lastName, Gender characterGender, int age = 10)
+    : Character(name, lastName, characterGender, age)
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public Gender CharacterGender { get; set; }
-    
-    public int Age { get; set; } = 10;
+    public string FirstName { get; set; } = name;
+    public new string LastName { get; set; } = lastName;
+    public new Gender CharacterGender { get; set; } = characterGender;
+
+    public new int Age { get; set; } = age;
     public Faculty FacultyName { get; set; } 
     
     public Dictionary<Characteristics, int> PlayerCharacteristics { get; set; }  = new ()

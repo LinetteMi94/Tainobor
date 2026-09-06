@@ -14,7 +14,7 @@ namespace Tainobor.Game;
 /// </summary>
 public static class GameLoop
 {
-    private static readonly Player Player = new ();
+    private static Player Player;
     
     /// <summary>
     /// Запускает игру и управляет последовательностью основных игровых этапов.
@@ -35,14 +35,13 @@ public static class GameLoop
     { 
         WelcomeMessages.ShowFirstMessages();
         Messages.Print("Для начала укажи своё имя:");
-        Player.FirstName = Console.ReadLine()!;
-        Console.WriteLine();
-        Messages.Print("А теперь фамилию:");
-        Player.LastName = Console.ReadLine()!;
+        var firstName = Console.ReadLine()!;
+        Messages.Print("\nА теперь фамилию:");
+        var lastName = Console.ReadLine()!;
         Console.WriteLine();
         var textForChooseGender = "В реестре Тайнобора есть ещё одна важная запись.\nУкажи свой пол:\n1. Мужской\n2. Женский\n";
         int playerGender = textForChooseGender.GetValidInput(2);
-        Player.CharacterGender = playerGender == 1 ? Gender.Мужской : Gender.Женский;
+        Player = new Player(firstName, lastName, playerGender == 1 ? Gender.Мужской : Gender.Женский);
         Messages.Print("Приятно познакомиться, " + Player.FirstName + " " + Player.LastName + ".\n \nТвоё имя внесено в реестр учеников Тайнобора.\n");
     }
     

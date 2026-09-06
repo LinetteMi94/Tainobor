@@ -8,5 +8,5 @@ namespace Tainobor.Subjects;
 public class Healing : Subject
 {
     public override string Name => "Врачевание";
-    public override Teacher Teacher => TeacherRepository.HealingTeacher;
+    public override Teacher Teacher => TeacherRepository.HealingTeacher!;
 }

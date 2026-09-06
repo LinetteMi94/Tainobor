@@ -8,5 +8,5 @@ namespace Tainobor.Subjects;
 public class MagicalCreatures : Subject
 {
     public override string Name => "Звероведение";
-    public override Teacher Teacher => TeacherRepository.MagicalCreaturesTeacher;
+    public override Teacher Teacher => TeacherRepository.MagicalCreaturesTeacher!;
 }

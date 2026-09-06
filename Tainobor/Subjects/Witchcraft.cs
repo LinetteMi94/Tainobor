@@ -6,5 +6,5 @@ namespace Tainobor.Subjects;
 public class Witchcraft : Subject
 {
     public override string Name => "Ворожба";
-    public override Teacher Teacher => TeacherRepository.WitchcraftTeacher;
+    public override Teacher Teacher => TeacherRepository.WitchcraftTeacher!;
 }

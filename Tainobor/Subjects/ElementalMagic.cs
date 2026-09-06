@@ -8,5 +8,5 @@ namespace Tainobor.Subjects;
 public class ElementalMagic : Subject
 {
     public override string Name => "Стихиеведение";
-    public override Teacher Teacher => TeacherRepository.ElementalMagicTeacher;
+    public override Teacher Teacher => TeacherRepository.ElementalMagicTeacher!;
 }

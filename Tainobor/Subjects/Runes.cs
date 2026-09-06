@@ -8,5 +8,5 @@ namespace Tainobor.Subjects;
 public class Runes : Subject
 {
     public override string Name => "Руны";
-    public override Teacher Teacher => TeacherRepository.RunesTeacher;
+    public override Teacher Teacher => TeacherRepository.RunesTeacher!;
 }

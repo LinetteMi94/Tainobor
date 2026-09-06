@@ -13,7 +13,7 @@ namespace Tainobor.Test;
 /// </summary>
 public static class FacultyTest
 {
-    private static Player _player = new ();
+    private static Player _player;
     
     private static List<Question> Questions { get;}=
     [

@@ -8,5 +8,5 @@ namespace Tainobor.Subjects;
 public class Dueling : Subject
 {
     public override string Name => "Поединки";
-    public override Teacher Teacher => TeacherRepository.DivinationTeacher;
+    public override Teacher Teacher => TeacherRepository.DuelingTeacher;
 }
