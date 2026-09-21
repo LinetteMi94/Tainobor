@@ -77,7 +77,7 @@ public static class GameLoop
         switch (choice)
         {
             case "1":
-                //_isRunning = true;
+                _isRunning = true;
                 break;
             case "2":
                 _isRunning = true;

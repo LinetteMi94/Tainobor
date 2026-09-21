@@ -18,7 +18,7 @@ public static class MainMenu
         Console.WriteLine("|                        |");
         Console.WriteLine(" ------------------------ ");
         
-        //Console.WriteLine("1. Продолжить игру");
+        Console.WriteLine("1. Продолжить игру");
         Console.WriteLine("2. Новая игра");
         Console.WriteLine("3. Об академии");
         Console.WriteLine("4. Выйти");

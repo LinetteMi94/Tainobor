@@ -38,6 +38,12 @@ public abstract class Messages
             Console.WriteLine();
         }
     }
+
+    protected static void ShowAllMessages(string message)
+    {
+        TypeText(message);
+        Console.WriteLine();
+    }
     
     /// <summary>
     /// Выводит конкретное сообщение из переданного списка.
@@ -60,11 +66,22 @@ public abstract class Messages
     /// Выводит текст в консоль с эффектом печатания.
     /// </summary>
     /// <param name="text">Текст, который необходимо вывести.</param>
-    private static void TypeText(string text)
+    private static void TypeText(string? text)
     {
-        foreach (char symbol in text)
+        for (int i = 0; i < text.Length; i++)
         {
-            Console.Write(symbol);
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    Console.Write(text[i..]);
+                    break;
+                }
+            }
+
+            Console.Write(text[i]);
             Thread.Sleep(15);
         }
         Console.WriteLine();
