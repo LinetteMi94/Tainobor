@@ -15,6 +15,10 @@ namespace Tainobor.Game;
 /// </summary>
 public static class GameLoop
 {
+    private static bool _isAfterClasses;
+    private static bool _isEvening;
+    private static bool _isStudyTime;
+    private static bool _isMorning;
     private static Player _player;
     private static bool _isRunning;
     private static bool _academyInformationIsRunning;
@@ -27,7 +31,29 @@ public static class GameLoop
         MainMenu.ShowMainMenu(HandleMainMenuChoice);
         while (_isRunning)
         {
-            _player.ShowGameMenu(HandleGameMenuChoice);
+            _isMorning = true;
+            while (_isMorning)
+            {
+                _player.ShowGameMorningMenu(HandleGameMorningMenuChoice);
+            }
+            
+            _isStudyTime = true;
+            while (_isStudyTime)
+            {
+                _player.ShowGameStudyTimeMenu(HandleGameStudyTimeMenuChoice);
+            }
+
+            _isAfterClasses = true;
+            while (_isAfterClasses)
+            {
+                _player.ShowGameAfterClassesMenu(HandleGameAfterClassesMenuChoice);
+            }
+            
+            _isEvening = true;
+            while (_isEvening)
+            {
+                _player.ShowGameEveningMenu(HandleGameEveningMenuChoice);
+            }
         }
     }
 
@@ -119,18 +145,109 @@ public static class GameLoop
     }
     
     /// <summary>
-    /// Обрабатывает выбор игрока из меню игрока
+    /// Обрабатывает выбор игрока из утреннего меню игрока
     /// и запускает соответствующее действие.
     /// </summary>
-    private static void HandleGameMenuChoice(string choice)
+    private static void HandleGameMorningMenuChoice(int choice)
     {
         _academyInformationIsRunning = true;
         switch (choice)
         {
-            case "1":
+            case 1:
                 _player.DisplayCharacterStats();
                 break;
-            case "2":
+            case 2:
+                //Позавтракать
+                break;
+            case 3:
+                //Посмотреть расписание
+                break;
+            case 4:
+                _isMorning = false;
+                break;
+            case 5:
+                _isRunning = false;
+                break;
+        }
+    }
+    
+    /// <summary>
+    /// Обрабатывает выбор игрока из меню посещения занятий 
+    /// и запускает соответствующее действие.
+    /// </summary>
+    private static void HandleGameStudyTimeMenuChoice(int choice)
+    {
+        _academyInformationIsRunning = true;
+        switch (choice)
+        {
+            case 1:
+                _player.DisplayCharacterStats();
+                break;
+            case 2:
+                //Посетить занятие
+                _isStudyTime = false;
+                break;
+            case 3:
+                //Выполнить практическое задание
+                break;
+            case 4:
+                _isRunning = false;
+                break;
+        }
+    }
+    
+    /// <summary>
+    /// Обрабатывает выбор игрока из меню после занятий 
+    /// и запускает соответствующее действие.
+    /// </summary>
+    private static void HandleGameAfterClassesMenuChoice(int choice)
+    {
+        _academyInformationIsRunning = true;
+        switch (choice)
+        {
+            case 1:
+                _player.DisplayCharacterStats();
+                break;
+            case 2:
+                // Пойти в библиотеку
+                break;
+            case 3:
+                //Пообщаться с однокурсниками
+                break;
+            case 4:
+                //Практиковать магию
+                break;
+            case 5:
+                //Отдохнуть
+                break;
+            case 6:
+                _isRunning = false;
+                break;
+        }
+    }
+    
+    /// <summary>
+    /// Обрабатывает выбор игрока из вечернего меню игрока
+    /// и запускает соответствующее действие.
+    /// </summary>
+    private static void HandleGameEveningMenuChoice(int choice)
+    {
+        _academyInformationIsRunning = true;
+        switch (choice)
+        {
+            case 1:
+                _player.DisplayCharacterStats();
+                break;
+            case 2:
+                //Подготовиться к завтрашнему дню
+                break;
+            case 3:
+                //Посмотреть расписание
+                break;
+            case 4:
+                _isEvening = false;
+                break;
+            case 5:
                 _isRunning = false;
                 break;
         }

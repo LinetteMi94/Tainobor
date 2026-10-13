@@ -1,4 +1,5 @@
-﻿using Tainobor.Input;
+﻿using System;
+using Tainobor.Input;
 
 namespace Tainobor.Menus;
 
