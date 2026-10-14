@@ -15,13 +15,10 @@ namespace Tainobor.Game;
 /// </summary>
 public static class GameLoop
 {
-    private static bool _isAfterClasses;
-    private static bool _isEvening;
-    private static bool _isStudyTime;
-    private static bool _isMorning;
     private static Player _player;
     private static bool _isRunning;
     private static bool _academyInformationIsRunning;
+    private static DayPeriod _currentPeriod = DayPeriod.Morning;
     
     /// <summary>
     /// Запускает игру и управляет последовательностью основных игровых этапов.
@@ -31,28 +28,20 @@ public static class GameLoop
         MainMenu.ShowMainMenu(HandleMainMenuChoice);
         while (_isRunning)
         {
-            _isMorning = true;
-            while (_isMorning)
+            switch (_currentPeriod)
             {
-                _player.ShowGameMorningMenu(HandleGameMorningMenuChoice);
-            }
-            
-            _isStudyTime = true;
-            while (_isStudyTime)
-            {
-                _player.ShowGameStudyTimeMenu(HandleGameStudyTimeMenuChoice);
-            }
-
-            _isAfterClasses = true;
-            while (_isAfterClasses)
-            {
-                _player.ShowGameAfterClassesMenu(HandleGameAfterClassesMenuChoice);
-            }
-            
-            _isEvening = true;
-            while (_isEvening)
-            {
-                _player.ShowGameEveningMenu(HandleGameEveningMenuChoice);
+                case DayPeriod.Morning:
+                    _player.ShowGameMorningMenu(HandleGameMorningMenuChoice);
+                    break;
+                case DayPeriod.StudyTime:
+                    _player.ShowGameStudyTimeMenu(HandleGameStudyTimeMenuChoice);
+                    break;
+                case DayPeriod.AfterClasses:
+                    _player.ShowGameAfterClassesMenu(HandleGameAfterClassesMenuChoice);
+                    break;
+                case DayPeriod.Evening:
+                    _player.ShowGameEveningMenu(HandleGameEveningMenuChoice);
+                    break;
             }
         }
     }
@@ -104,6 +93,11 @@ public static class GameLoop
         {
             case "1":
                 _isRunning = true;
+                _player = new Player("Мария", "Королева", Gender.Женский)
+                {
+                    FacultyName = Faculty.Заговорье
+                };
+                CreateSchool();
                 break;
             case "2":
                 _isRunning = true;
@@ -157,13 +151,14 @@ public static class GameLoop
                 _player.DisplayCharacterStats();
                 break;
             case 2:
-                //Позавтракать
+                Console.WriteLine("Вы завтракаете");
                 break;
             case 3:
-                //Посмотреть расписание
+                Console.WriteLine("Вы смотрите своё расписание");
                 break;
             case 4:
-                _isMorning = false;
+                Console.WriteLine("Вы пошли на занятия");
+                _currentPeriod = DayPeriod.StudyTime;
                 break;
             case 5:
                 _isRunning = false;
@@ -184,11 +179,11 @@ public static class GameLoop
                 _player.DisplayCharacterStats();
                 break;
             case 2:
-                //Посетить занятие
-                _isStudyTime = false;
+                Console.WriteLine("Вы посетили занятие");
+                _currentPeriod = DayPeriod.AfterClasses;
                 break;
             case 3:
-                //Выполнить практическое задание
+                Console.WriteLine("Вы выполняете практическое задание");
                 break;
             case 4:
                 _isRunning = false;
@@ -209,16 +204,17 @@ public static class GameLoop
                 _player.DisplayCharacterStats();
                 break;
             case 2:
-                // Пойти в библиотеку
+                Console.WriteLine("Вы пошли в библиотеку");
                 break;
             case 3:
-                //Пообщаться с однокурсниками
+                Console.WriteLine("Вы общаетесь с однокурсниками");
                 break;
             case 4:
-                //Практиковать магию
+                Console.WriteLine("Вы практическуетесь в магии");
                 break;
             case 5:
-                //Отдохнуть
+                Console.WriteLine("Вы отдыхаете");
+                _currentPeriod = DayPeriod.Evening;
                 break;
             case 6:
                 _isRunning = false;
@@ -239,13 +235,14 @@ public static class GameLoop
                 _player.DisplayCharacterStats();
                 break;
             case 2:
-                //Подготовиться к завтрашнему дню
+                Console.WriteLine("Вы готовитесь к завтрашнему дню");
                 break;
             case 3:
-                //Посмотреть расписание
+                Console.WriteLine("Вы смотрите расписание");
                 break;
             case 4:
-                _isEvening = false;
+                Console.WriteLine("Вы идёте спать");
+                _currentPeriod = DayPeriod.Morning;
                 break;
             case 5:
                 _isRunning = false;
