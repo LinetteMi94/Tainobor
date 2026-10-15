@@ -144,14 +144,13 @@ public static class GameLoop
     /// </summary>
     private static void HandleGameMorningMenuChoice(int choice)
     {
-        _academyInformationIsRunning = true;
         switch (choice)
         {
             case 1:
                 _player.DisplayCharacterStats();
                 break;
             case 2:
-                Console.WriteLine("Вы завтракаете");
+                MorningPeriod.HaveBreakfast();
                 break;
             case 3:
                 Console.WriteLine("Вы смотрите своё расписание");
@@ -172,7 +171,6 @@ public static class GameLoop
     /// </summary>
     private static void HandleGameStudyTimeMenuChoice(int choice)
     {
-        _academyInformationIsRunning = true;
         switch (choice)
         {
             case 1:
@@ -197,7 +195,6 @@ public static class GameLoop
     /// </summary>
     private static void HandleGameAfterClassesMenuChoice(int choice)
     {
-        _academyInformationIsRunning = true;
         switch (choice)
         {
             case 1:
@@ -228,7 +225,6 @@ public static class GameLoop
     /// </summary>
     private static void HandleGameEveningMenuChoice(int choice)
     {
-        _academyInformationIsRunning = true;
         switch (choice)
         {
             case 1:
