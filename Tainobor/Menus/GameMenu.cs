@@ -121,4 +121,31 @@ public static class GameMenu
         
         Messages.Key();
     }
+    
+    /// <summary>
+    /// Отображает меню библиотеки для указанного игрока.
+    /// </summary>
+    /// <param name="player">Игрок, для которого отображается меню.</param>
+    public static void ShowLibraryMenu(this Player player, Action<int> handleChoice)
+    {
+        Console.Clear();
+        Console.Clear();
+        Console.WriteLine(" ------------------------ ");
+        Console.WriteLine("|                        |");
+        Console.WriteLine("|       ТАЙНОБОР         |");
+        Console.WriteLine("|                        |");
+        Console.WriteLine("|      Меню ученика      |");
+        Console.WriteLine("|                        |");
+        Console.WriteLine(" ------------------------ ");
+        
+        Console.WriteLine("1. Осмотреться в библиотеке");
+        Console.WriteLine("2. Подготовиться к урокам");
+        Console.WriteLine("3. Почитать книгу");
+        Console.WriteLine("4. Посетить запретный отдел");
+        Console.WriteLine("5. Выйти из библиотеки");
+        
+        var choice = InputValidator.GetValidInput(null, 5);
+        handleChoice(choice);
+        Messages.Key();
+    }
 }

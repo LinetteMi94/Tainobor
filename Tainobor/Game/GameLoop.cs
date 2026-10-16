@@ -201,7 +201,7 @@ public static class GameLoop
                 _player.DisplayCharacterStats();
                 break;
             case 2:
-                Console.WriteLine("Вы пошли в библиотеку");
+                AfterClassesPeriod.GoToLibrary(_player);
                 break;
             case 3:
                 Console.WriteLine("Вы общаетесь с однокурсниками");
