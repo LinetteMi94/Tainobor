@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Tainobor.Characters;
 using Tainobor.GameMessages;
 using Tainobor.Menus;
@@ -73,7 +75,7 @@ public static class AfterClassesPeriod
         _isLibraryOpen = true;
         while (_isLibraryOpen)
         {
-            GameMenu.ShowLibraryMenu(player, HandleLibraryMenuChoice);
+            player.ShowLibraryMenu(HandleLibraryMenuChoice);
         }
     }
     

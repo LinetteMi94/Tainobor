@@ -1,5 +1,6 @@
 ﻿using System;
 using Tainobor.Characters;
+using Tainobor.Game;
 using Tainobor.GameMessages;
 using Tainobor.Input;
 
@@ -16,16 +17,7 @@ public static class GameMenu
     /// <param name="player">Игрок, для которого отображается меню.</param>
     public static void ShowGameMorningMenu(this Player player, Action<int> handleChoice)
     {
-        Console.Clear();
-        Console.Clear();
-        Console.WriteLine(" ------------------------ ");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|       ТАЙНОБОР         |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|      Меню ученика      |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine(" ------------------------ ");
-        
+        player.ShowTitle();
         Console.WriteLine("1. Персонаж");
         Console.WriteLine("2. Позавтракать");
         Console.WriteLine("3. Посмотреть расписание");
@@ -44,16 +36,7 @@ public static class GameMenu
     /// <param name="player">Игрок, для которого отображается меню.</param>
     public static void ShowGameStudyTimeMenu(this Player player, Action<int> handleChoice)
     {
-        Console.Clear();
-        Console.Clear();
-        Console.WriteLine(" ------------------------ ");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|       ТАЙНОБОР         |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|      Меню ученика      |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine(" ------------------------ ");
-        
+        player.ShowTitle();
         Console.WriteLine("1. Персонаж");
         Console.WriteLine("2. Посетить занятие");
         Console.WriteLine("3. Выполнить практическое задание");
@@ -71,16 +54,7 @@ public static class GameMenu
     /// <param name="player">Игрок, для которого отображается меню.</param>
     public static void ShowGameAfterClassesMenu(this Player player, Action<int> handleChoice)
     {
-        Console.Clear();
-        Console.Clear();
-        Console.WriteLine(" ------------------------ ");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|       ТАЙНОБОР         |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|      Меню ученика      |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine(" ------------------------ ");
-        
+        player.ShowTitle();
         Console.WriteLine("1. Персонаж");
         Console.WriteLine("2. Пойти в библиотеку");
         Console.WriteLine("3. Пообщаться с однокурсниками");
@@ -100,16 +74,7 @@ public static class GameMenu
     /// <param name="player">Игрок, для которого отображается меню.</param>
     public static void ShowGameEveningMenu(this Player player, Action<int> handleChoice)
     {
-        Console.Clear();
-        Console.Clear();
-        Console.WriteLine(" ------------------------ ");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|       ТАЙНОБОР         |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|      Меню ученика      |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine(" ------------------------ ");
-        
+        player.ShowTitle();
         Console.WriteLine("1. Персонаж");
         Console.WriteLine("2. Подготовиться к завтрашнему дню");
         Console.WriteLine("3. Посмотреть расписание");
@@ -128,16 +93,7 @@ public static class GameMenu
     /// <param name="player">Игрок, для которого отображается меню.</param>
     public static void ShowLibraryMenu(this Player player, Action<int> handleChoice)
     {
-        Console.Clear();
-        Console.Clear();
-        Console.WriteLine(" ------------------------ ");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|       ТАЙНОБОР         |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine("|      Меню ученика      |");
-        Console.WriteLine("|                        |");
-        Console.WriteLine(" ------------------------ ");
-        
+        player.ShowTitle();
         Console.WriteLine("1. Осмотреться в библиотеке");
         Console.WriteLine("2. Подготовиться к урокам");
         Console.WriteLine("3. Почитать книгу");

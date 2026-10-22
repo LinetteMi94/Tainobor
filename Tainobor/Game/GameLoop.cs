@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices.Marshalling;
 using Tainobor.Characters;
 using Tainobor.GameMessages;
@@ -19,6 +20,7 @@ public static class GameLoop
     private static bool _isRunning;
     private static bool _academyInformationIsRunning;
     private static DayPeriod _currentPeriod = DayPeriod.Morning;
+    private static GameDayOfWeek _currentDayOfWeek = GameDayOfWeek.Monday;
     
     /// <summary>
     /// Запускает игру и управляет последовательностью основных игровых этапов.
@@ -178,6 +180,7 @@ public static class GameLoop
                 break;
             case 2:
                 Console.WriteLine("Вы посетили занятие");
+                StudyTimePeriod.GoToLesson();
                 _currentPeriod = DayPeriod.AfterClasses;
                 break;
             case 3:
@@ -239,10 +242,29 @@ public static class GameLoop
             case 4:
                 Console.WriteLine("Вы идёте спать");
                 _currentPeriod = DayPeriod.Morning;
+                _currentDayOfWeek++;
+                if (_currentDayOfWeek == (GameDayOfWeek)8) _currentDayOfWeek = GameDayOfWeek.Monday;
                 break;
             case 5:
                 _isRunning = false;
                 break;
         }
+    }
+    
+    /// <summary>
+    /// Отображает заголовок.
+    /// </summary>
+    /// <param name="player">Игрок, для которого отображается заголовок.</param>
+    public static void ShowTitle(this Player player)
+    {
+        Console.Clear();
+        Console.Clear();
+        Console.WriteLine(" ------------------------ ");
+        Console.WriteLine("|                        |");
+        Console.WriteLine("|       ТАЙНОБОР         |");
+        Console.WriteLine("|                        |");
+        Console.WriteLine($"|      {_currentDayOfWeek.GetDescription()}      |");
+        Console.WriteLine("|                        |");
+        Console.WriteLine(" ------------------------ \n" );
     }
 }
