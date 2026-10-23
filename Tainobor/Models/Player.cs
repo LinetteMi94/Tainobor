@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Tainobor.Enums;
 
-namespace Tainobor.Characters;
+namespace Tainobor.Models;
 
 /// <summary>
 /// Представляет персонажа игрока, поступившего в академию Тайнобор.
@@ -14,7 +15,7 @@ public class Player(string name, string lastName, Gender characterGender, int ag
     public new Gender CharacterGender { get; set; } = characterGender;
 
     public new int Age { get; set; } = age;
-    public Faculty FacultyName { get; set; } 
+    public Faculty PlayerFaculty { get; set; } 
     
     public Dictionary<Characteristics, int> PlayerCharacteristics { get; set; }  = new ()
     {
@@ -32,7 +33,7 @@ public class Player(string name, string lastName, Gender characterGender, int ag
     public void DisplayCharacterStats()
     {
         Console.Write(CharacterGender == Gender.Женский ? "Ученица " : "Ученик ");
-        Console.WriteLine($"{FirstName} {LastName}, {Age} лет - 1 курс факультета {FacultyName}\n");
+        Console.WriteLine($"{FirstName} {LastName}, {Age} лет - 1 курс факультета {PlayerFaculty.Name}\n");
         Console.WriteLine("Характеристики:");
         foreach (var character in PlayerCharacteristics)
         {

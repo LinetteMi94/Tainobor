@@ -1,5 +1,4 @@
 ﻿using System;
-using Tainobor.Characters;
 using Tainobor.GameMessages;
 using Tainobor.Input;
 

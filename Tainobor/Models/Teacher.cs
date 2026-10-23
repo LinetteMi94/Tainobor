@@ -1,6 +1,6 @@
 ﻿using Tainobor.Enums;
 
-namespace Tainobor.Characters.Teachers;
+namespace Tainobor.Models;
 
 /// <summary>
 /// Представляет преподавателя Академии Тайнобор.

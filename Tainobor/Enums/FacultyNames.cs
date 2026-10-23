@@ -3,7 +3,7 @@
 /// <summary>
 /// Определяет факультет, на который может быть распределён ученик.
 /// </summary>
-public enum Faculty
+public enum FacultyNames
 {
     Корнецвет,
     Лесоведь,

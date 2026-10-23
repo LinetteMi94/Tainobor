@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Tainobor.Characters;
 using Tainobor.GameMessages;
 using Tainobor.Menus;
+using Tainobor.Models;
 
 namespace Tainobor.Game;
 

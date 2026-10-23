@@ -1,8 +1,8 @@
 ﻿using System;
-using Tainobor.Characters;
 using Tainobor.Game;
 using Tainobor.GameMessages;
 using Tainobor.Input;
+using Tainobor.Models;
 
 namespace Tainobor.Menus;
 

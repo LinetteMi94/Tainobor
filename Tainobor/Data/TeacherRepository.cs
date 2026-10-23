@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Tainobor.Models;
 using Tainobor.Enums;
 
-namespace Tainobor.Characters.Teachers;
+namespace Tainobor.Data;
 
 /// <summary>
 /// Предоставляет доступ к преподавателям Академии Тайнобор и управляет их созданием.

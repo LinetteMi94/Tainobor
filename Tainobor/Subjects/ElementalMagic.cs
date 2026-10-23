@@ -1,4 +1,5 @@
-﻿using Tainobor.Characters.Teachers;
+﻿using Tainobor.Data;
+using Tainobor.Models;
 
 namespace Tainobor.Subjects;
 

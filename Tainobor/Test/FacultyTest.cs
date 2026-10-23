@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Tainobor.Characters;
 using Tainobor.Enums;
 using Tainobor.GameMessages;
 using Tainobor.Input;
+using Tainobor.Models;
 
 namespace Tainobor.Test;
 
@@ -21,22 +21,22 @@ public static class FacultyTest
         [
                     new Answer("1. Осторожно изучу его внешний вид и свойства.", 
                     [
-                            new Effect(Faculty.Корнецвет, 1),
+                            new Effect(FacultyNames.Корнецвет, 1),
                             new Effect(Characteristics.Трудолюбие, 1)
                     ]),
                     new Answer("2. Попробую выяснить, почему оно оказалось именно здесь.", 
                     [
-                            new Effect(Faculty.Тайнор, 1),
+                            new Effect(FacultyNames.Тайнор, 1),
                             new Effect(Characteristics.Интуиция, 1)
                     ]),
                     new Answer("3. Понаблюдаю, как оно взаимодействует с окружающими магическими силами.", 
                     [
-                            new Effect(Faculty.Лесоведь, 1),
+                            new Effect(FacultyNames.Лесоведь, 1),
                             new Effect(Characteristics.Ловкость, 1)
                     ]),
                     new Answer("4. Сначала проверю, не представляет ли оно опасности для окружающих.", 
                     [
-                            new Effect(Faculty.Живница, 1),
+                            new Effect(FacultyNames.Живница, 1),
                             new Effect(Characteristics.Дружелюбие, 1)
                     ])
         ]),
@@ -45,22 +45,22 @@ public static class FacultyTest
         [
             new Answer("1. Описание поведения и повадок существ.", 
             [
-                new Effect(Faculty.Лесоведь, 1),
+                new Effect(FacultyNames.Лесоведь, 1),
                 new Effect(Characteristics.Ловкость, 1)
             ]),
             new Answer("2. Сведения о редких растениях, которыми они питаются.", 
             [
-                new Effect(Faculty.Корнецвет, 1),
+                new Effect(FacultyNames.Корнецвет, 1),
                 new Effect(Characteristics.Трудолюбие, 1)
             ]),
             new Answer("3. Старые записи о заклинаниях, связанных с существами.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ]),
             new Answer("4. Неизвестные символы на полях книги.", 
             [
-                new Effect(Faculty.Тайнор, 1),
+                new Effect(FacultyNames.Тайнор, 1),
                 new Effect(Characteristics.Интуиция, 1)
             ])
         ]),
@@ -69,22 +69,22 @@ public static class FacultyTest
         [
             new Answer("1. Узнать, насколько мощным оно может стать и какую силу скрывает.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ]),
             new Answer("2. Научиться выполнять его максимально точно.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ]),
             new Answer("3. Понять принцип, по которому оно работает.", 
             [
-                new Effect(Faculty.Тайнор, 1),
+                new Effect(FacultyNames.Тайнор, 1),
                 new Effect(Characteristics.Интуиция, 1)
             ]),
             new Answer( "4. Узнать, как использовать его, чтобы помочь другим.", 
             [
-                new Effect(Faculty.Живница, 1),
+                new Effect(FacultyNames.Живница, 1),
                 new Effect(Characteristics.Дружелюбие, 1)
             ])
         ]),
@@ -93,22 +93,22 @@ public static class FacultyTest
         [
             new Answer("1. Попытаюсь понять, что оно пытается мне сообщить.", 
             [
-                new Effect(Faculty.Лесоведь, 1),
+                new Effect(FacultyNames.Лесоведь, 1),
                 new Effect(Characteristics.Ловкость, 1)
             ]),
             new Answer("2. Проверю, не связано ли его состояние с каким-нибудь растением или веществом.", 
             [
-                new Effect(Faculty.Корнецвет, 1),
+                new Effect(FacultyNames.Корнецвет, 1),
                 new Effect(Characteristics.Трудолюбие, 1)
             ]),
             new Answer("3. Поищу информацию о подобных случаях в старых книгах.", 
             [
-                new Effect(Faculty.Тайнор, 1),
+                new Effect(FacultyNames.Тайнор, 1),
                 new Effect(Characteristics.Интуиция, 1)
             ]),
             new Answer( "4. Попробую успокоить его с помощью магии.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ])
         ]),
@@ -117,22 +117,22 @@ public static class FacultyTest
         [
             new Answer("1. Найду безопасное место и помогу тем, кто оказался неподалёку.", 
             [
-                new Effect(Faculty.Живница, 1),
+                new Effect(FacultyNames.Живница, 1),
                 new Effect(Characteristics.Дружелюбие, 1)
             ]),
             new Answer("2. Попытаюсь понять, насколько необычна эта гроза.", 
             [
-                new Effect(Faculty.Тайнор, 1),
+                new Effect(FacultyNames.Тайнор, 1),
                 new Effect(Characteristics.Интуиция, 1)
             ]),
             new Answer("3. Буду наблюдать за стихией и постараюсь почувствовать её силу.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ]),
             new Answer( "4. Проверю, как магические растения реагируют на грозу.", 
             [
-                new Effect(Faculty.Корнецвет, 1),
+                new Effect(FacultyNames.Корнецвет, 1),
                 new Effect(Characteristics.Трудолюбие, 1)
             ])
         ]),
@@ -141,22 +141,22 @@ public static class FacultyTest
         [
             new Answer("1. Попытаюсь найти способ активировать его.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ]),
             new Answer("2. Изучу символы и надписи на нём.", 
             [
-                new Effect(Faculty.Тайнор, 1),
+                new Effect(FacultyNames.Тайнор, 1),
                 new Effect(Characteristics.Интуиция, 1)
             ]),
             new Answer("3. Проверю, не связан ли он с целительной магией.", 
             [
-                new Effect(Faculty.Живница, 1),
+                new Effect(FacultyNames.Живница, 1),
                 new Effect(Characteristics.Дружелюбие, 1)
             ]),
             new Answer( "4. Попытаюсь определить, не заключена ли в нём сила какой-либо стихии.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ])
         ]),
@@ -165,22 +165,22 @@ public static class FacultyTest
         [
             new Answer("1. Понимать язык магических существ.", 
             [
-                new Effect(Faculty.Лесоведь, 1),
+                new Effect(FacultyNames.Лесоведь, 1),
                 new Effect(Characteristics.Ловкость, 1)
             ]),
             new Answer("2. Создавать сложнейшие алхимические составы.", 
             [
-                new Effect(Faculty.Корнецвет, 1),
+                new Effect(FacultyNames.Корнецвет, 1),
                 new Effect(Characteristics.Трудолюбие, 1)
             ]),
             new Answer("3. Управлять силой огня, воды, воздуха и земли.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ]),
             new Answer( "4. Создавать предметы, наделённые магическими свойствами.", 
             [
-                new Effect(Faculty.Тайнор, 1),
+                new Effect(FacultyNames.Тайнор, 1),
                 new Effect(Characteristics.Интуиция, 1)
             ])
         ]),
@@ -189,22 +189,22 @@ public static class FacultyTest
         [
             new Answer("1. Немедленно попытаюсь оказать ему помощь.", 
             [
-                new Effect(Faculty.Живница, 1),
+                new Effect(FacultyNames.Живница, 1),
                 new Effect(Characteristics.Дружелюбие, 1)
             ]),
             new Answer("2. Постараюсь определить, какое заклинание вызвало травму.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ]),
             new Answer("3. Поищу подходящее лечебное средство.", 
             [
-                new Effect(Faculty.Корнецвет, 1),
+                new Effect(FacultyNames.Корнецвет, 1),
                 new Effect(Characteristics.Трудолюбие, 1)
             ]),
             new Answer( "4. Попытаюсь понять, какая магическая сила могла привести к такому результату.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ])
         ]),
@@ -213,22 +213,22 @@ public static class FacultyTest
         [
             new Answer("1. В лечебное крыло, чтобы узнать больше о целительной магии.", 
             [
-                new Effect(Faculty.Живница, 1),
+                new Effect(FacultyNames.Живница, 1),
                 new Effect(Characteristics.Дружелюбие, 1)
             ]),
             new Answer("2. В зверинец или заповедную часть академии.", 
             [
-                new Effect(Faculty.Лесоведь, 1),
+                new Effect(FacultyNames.Лесоведь, 1),
                 new Effect(Characteristics.Ловкость, 1)
             ]),
             new Answer("3. На тренировочную площадку для стихийной магии.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ]),
             new Answer( "4. В зал чар, чтобы самостоятельно потренироваться в заклинаниях.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ])
         ]),
@@ -237,22 +237,22 @@ public static class FacultyTest
         [
             new Answer("1. Проверить, как изменение заклинания влияет на его результат.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ]),
             new Answer("2. Исследовать неизвестное магическое вещество.", 
             [
-                new Effect(Faculty.Корнецвет, 1),
+                new Effect(FacultyNames.Корнецвет, 1),
                 new Effect(Characteristics.Трудолюбие, 1)
             ]),
             new Answer("3. Узнать, как магическая сила взаимодействует с окружающим миром.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ]),
             new Answer( "4. Наблюдать за реакцией магического существа.", 
             [
-                new Effect(Faculty.Лесоведь, 1),
+                new Effect(FacultyNames.Лесоведь, 1),
                 new Effect(Characteristics.Ловкость, 1)
             ])
         ]),
@@ -261,22 +261,22 @@ public static class FacultyTest
         [
             new Answer("1. Блюдо с необычными травами и пряностями, которых ты никогда раньше не пробовал.", 
             [
-                new Effect(Faculty.Корнецвет, 1),
+                new Effect(FacultyNames.Корнецвет, 1),
                 new Effect(Characteristics.Трудолюбие, 1)
             ]),
             new Answer("2. Что-нибудь сладкое. Сегодня можно позволить себе маленький праздник.", 
             [
-                new Effect(Faculty.Лесоведь, 1),
+                new Effect(FacultyNames.Лесоведь, 1),
                 new Effect(Characteristics.Ловкость, 1)
             ]),
             new Answer("3. Блюдо, которое пахнет свежим лесом. Ты выбираешь его, надеясь почувствовать вкус чего-то настоящего и природного.", 
             [
-                new Effect(Faculty.Живница, 1),
+                new Effect(FacultyNames.Живница, 1),
                 new Effect(Characteristics.Дружелюбие, 1)
             ]),
             new Answer( "4. Блюдо, которое никто не решается попробовать первым. Именно поэтому тебе становится интересно, что в нём такого необычного.", 
             [
-                new Effect(Faculty.Заговорье, 1),
+                new Effect(FacultyNames.Заговорье, 1),
                 new Effect(Characteristics.Харизма, 1)
             ])
         ]),
@@ -285,35 +285,35 @@ public static class FacultyTest
         [
             new Answer("1. Образование.", 
             [
-                new Effect(Faculty.Тайнор, 1),
+                new Effect(FacultyNames.Тайнор, 1),
                 new Effect(Characteristics.Интуиция, 1)
             ]),
             new Answer("2. Семья.", 
             [
-                new Effect(Faculty.Лесоведь, 1),
+                new Effect(FacultyNames.Лесоведь, 1),
                 new Effect(Characteristics.Ловкость, 1)
             ]),
             new Answer("3. Доброта.", 
             [
-                new Effect(Faculty.Живница, 1),
+                new Effect(FacultyNames.Живница, 1),
                 new Effect(Characteristics.Дружелюбие, 1)
             ]),
             new Answer( "4. Свобода.", 
             [
-                new Effect(Faculty.Громоврат, 1),
+                new Effect(FacultyNames.Громоврат, 1),
                 new Effect(Characteristics.Сила, 1)
             ])
         ])
     ];
     
-    private static readonly Dictionary<Faculty, int> FacultiesCounter = new ()
+    private static readonly Dictionary<FacultyNames, int> FacultiesCounter = new ()
     {
-        [Faculty.Живница] = 0,
-        [Faculty.Заговорье] = 0,
-        [Faculty.Тайнор] = 0,
-        [Faculty.Корнецвет] = 0,
-        [Faculty.Лесоведь] = 0,
-        [Faculty.Громоврат] = 0
+        [FacultyNames.Живница] = 0,
+        [FacultyNames.Заговорье] = 0,
+        [FacultyNames.Тайнор] = 0,
+        [FacultyNames.Корнецвет] = 0,
+        [FacultyNames.Лесоведь] = 0,
+        [FacultyNames.Громоврат] = 0
     };
 
     /// <summary>
@@ -322,7 +322,7 @@ public static class FacultyTest
     /// </summary>
     private static void AddPoint(Effect effect)
     {
-        if (effect.Name is Faculty faculty)
+        if (effect.Name is FacultyNames faculty)
         {
             FacultiesCounter[faculty] += effect.Value;
         }
@@ -336,14 +336,14 @@ public static class FacultyTest
     /// Определяет факультет ученика на основе набранных баллов.
     /// </summary>
     /// <returns>Факультет, набравший наибольшее количество баллов.</returns>
-    public static Faculty ChooseFaculty()
+    public static FacultyNames ChooseFaculty()
     {
         int max = FacultiesCounter.Values.Max();
         var winners = FacultiesCounter
             .Where(x => x.Value == max)
             .Select(x => x.Key)
             .ToList();
-        Faculty winner = winners[Random.Shared.Next(winners.Count)];
+        FacultyNames winner = winners[Random.Shared.Next(winners.Count)];
         return winner;
     }
     

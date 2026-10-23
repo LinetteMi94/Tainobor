@@ -1,6 +1,4 @@
-﻿using Tainobor.Characters.Teachers;
-
-namespace Tainobor.Subjects;
+﻿namespace Tainobor.Models;
 
 /// <summary>
 /// Представляет базовый класс для учебных предметов Академии Тайнобор.

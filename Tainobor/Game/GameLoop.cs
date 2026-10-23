@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Linq;
-using System.Runtime.InteropServices.Marshalling;
-using Tainobor.Characters;
+using Tainobor.Data;
 using Tainobor.GameMessages;
 using Tainobor.Input;
-using Tainobor.Locations;
 using Tainobor.Menus;
 using Tainobor.Test;
 using Tainobor.Enums;
+using Tainobor.Models;
 
 namespace Tainobor.Game;
 
@@ -18,7 +17,6 @@ public static class GameLoop
 {
     private static Player _player;
     private static bool _isRunning;
-    private static bool _academyInformationIsRunning;
     private static DayPeriod _currentPeriod = DayPeriod.Morning;
     private static GameDayOfWeek _currentDayOfWeek = GameDayOfWeek.Monday;
     
@@ -77,9 +75,9 @@ public static class GameLoop
     private static void TakeFacultyTest()
     {
         _player.ShowTestMenu();
-        _player.FacultyName = FacultyTest.ChooseFaculty();
+        _player.PlayerFaculty = FacultyRepository.CreateFaculties().First(x => x.Name == FacultyTest.ChooseFaculty());
         Console.Clear();
-        Messages.Print($"Распределение завершено. \n \nПо результатам испытания тебе присвоен факультет {_player.FacultyName}. \n  \nПоздравляем, {_player.FirstName}!");
+        Messages.Print($"Распределение завершено. \n \nПо результатам испытания тебе присвоен факультет {_player.PlayerFaculty.Name}. \n  \nПоздравляем, {_player.FirstName}!");
         WelcomeMessages.ShowAdmissionMessages();
         Messages.Key();
     }
@@ -88,54 +86,26 @@ public static class GameLoop
     /// Обрабатывает выбор игрока из главного меню
     /// и запускает соответствующее действие.
     /// </summary>
-    private static void HandleMainMenuChoice(string choice)
+    private static void HandleMainMenuChoice(int choice)
     {
-        _academyInformationIsRunning = true;
         switch (choice)
         {
-            case "1":
+            case 1:
                 _isRunning = true;
+                CreateSchool();
                 _player = new Player("Мария", "Королева", Gender.Женский)
                 {
-                    FacultyName = Faculty.Заговорье
+                    PlayerFaculty = FacultyRepository.Rootbloom
                 };
-                CreateSchool();
                 break;
-            case "2":
+            case 2:
                 _isRunning = true;
                 Console.Clear();
+                CreateSchool();
                 CreatePlayer();
                 TakeFacultyTest();
-                CreateSchool();
                 break;
-            case "3":
-                while (_academyInformationIsRunning)
-                {
-                    AcademyMenu.ShowAcademyMenu(HandleAcademyMenuChoice);
-                }
-                MainMenu.ShowMainMenu(HandleMainMenuChoice);
-                break;
-            case "4":
-                break;
-        }
-    }
-    
-    /// <summary>
-    /// Обрабатывает выбор игрока из меню академии
-    /// и запускает соответствующее действие.
-    /// </summary>
-    private static void HandleAcademyMenuChoice(string choice)
-    {
-        switch (choice)
-        {
-            case "1":
-                Console.WriteLine("Узнать об академии");
-                break;
-            case "2":
-                WelcomeMessages.ShowFacultyMessages();
-                break;
-            case "3":
-                _academyInformationIsRunning = false;
+            case 3:
                 break;
         }
     }

@@ -14,7 +14,7 @@ public abstract class Messages
     /// Выводит случайное сообщение из переданного списка.
     /// </summary>
     /// <param name="messages">Список сообщений, из которого выбирается случайное.</param>
-    public static void ShowMessage(List<string> messages)
+    public static void ShowRandomMessage(List<string> messages)
     {
         string message = messages[new Random().Next(messages.Count)];
         TypeText(message);
@@ -39,7 +39,7 @@ public abstract class Messages
         }
     }
 
-    protected static void ShowAllMessages(string message)
+    internal static void ShowMessage(string message)
     {
         TypeText(message);
         Console.WriteLine();

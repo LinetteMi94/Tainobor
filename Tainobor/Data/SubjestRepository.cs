@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Tainobor.Models;
+using Tainobor.Subjects;
 
-namespace Tainobor.Subjects;
+namespace Tainobor.Data;
 
 /// <summary>
 /// Предоставляет доступ к учебным предметам Академии Тайнобор и управляет их созданием.

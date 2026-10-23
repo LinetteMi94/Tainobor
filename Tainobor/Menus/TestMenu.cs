@@ -1,6 +1,6 @@
-﻿using Tainobor.Characters;
-using Tainobor.Input;
+﻿using Tainobor.Input;
 using Tainobor.GameMessages;
+using Tainobor.Models;
 using Tainobor.Test;
 
 namespace Tainobor.Menus;

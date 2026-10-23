@@ -8,7 +8,7 @@ namespace Tainobor.Menus;
 /// </summary>
 public static class MainMenu
 {
-    public static void ShowMainMenu(Action<string> handleChoice)
+    public static void ShowMainMenu(Action<int> handleChoice)
     {
         Console.Clear();
         Console.WriteLine(" ------------------------ ");
@@ -21,10 +21,9 @@ public static class MainMenu
         
         Console.WriteLine("1. Продолжить игру");
         Console.WriteLine("2. Новая игра");
-        Console.WriteLine("3. Об академии");
-        Console.WriteLine("4. Выйти");
+        Console.WriteLine("3. Выйти");
         
-        var choice = InputValidator.GetValidInput(null, 4).ToString();
+        var choice = InputValidator.GetValidInput(null, 3);
         handleChoice(choice);
     }
 }

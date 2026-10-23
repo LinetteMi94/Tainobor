@@ -1,6 +1,6 @@
 ﻿using Tainobor.Enums;
 
-namespace Tainobor.Characters;
+namespace Tainobor.Models;
 
 /// <summary>
 /// Представляет базового персонажа академии и содержит общие характеристики,
