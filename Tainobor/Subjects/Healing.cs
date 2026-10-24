@@ -10,4 +10,5 @@ public class Healing : Subject
 {
     public override string Name => "Врачевание";
     public override Teacher Teacher => TeacherRepository.HealingTeacher!;
+    public override int MinYear { get; } = 1;
 }

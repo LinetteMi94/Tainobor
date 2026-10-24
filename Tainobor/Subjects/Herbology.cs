@@ -10,4 +10,5 @@ public class Herbology : Subject
 {
     public override string Name => "Травничество";
     public override Teacher Teacher => TeacherRepository.HerbologyTeacher!;
+    public override int MinYear { get; } = 1;
 }

@@ -10,4 +10,5 @@ public class ArtifactCrafting : Subject
 {
     public override string Name => "Артефакторика";
     public override Teacher Teacher => TeacherRepository.ArtifactCraftingTeacher!;
+    public override int MinYear { get; } = 1;
 }

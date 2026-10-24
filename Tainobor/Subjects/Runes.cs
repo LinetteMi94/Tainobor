@@ -10,4 +10,5 @@ public class Runes : Subject
 {
     public override string Name => "Руны";
     public override Teacher Teacher => TeacherRepository.RunesTeacher!;
+    public override int MinYear { get; } = 3;
 }

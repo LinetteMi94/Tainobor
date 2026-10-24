@@ -10,4 +10,6 @@ public class Divination : Subject
 {
     public override string Name => "Вещевание";
     public override Teacher Teacher => TeacherRepository.DivinationTeacher!;
+    public override int MinYear { get; } = 2;
+    
 }

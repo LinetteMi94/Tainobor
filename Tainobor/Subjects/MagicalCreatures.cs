@@ -10,4 +10,5 @@ public class MagicalCreatures : Subject
 {
     public override string Name => "Звероведение";
     public override Teacher Teacher => TeacherRepository.MagicalCreaturesTeacher!;
+    public override int MinYear { get; } = 1;
 }

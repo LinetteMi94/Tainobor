@@ -11,4 +11,6 @@ public class Alchemy : Subject
     public override string Name => "Алхимия";
 
     public override Teacher Teacher => TeacherRepository.AlchemyTeacher!;
+
+    public override int MinYear { get; } = 1;
 }

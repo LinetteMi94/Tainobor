@@ -8,4 +8,6 @@ public abstract class Subject
     
     public abstract string Name { get; }
     public abstract Teacher Teacher { get; }
+    public abstract int MinYear { get; }
+    
 }

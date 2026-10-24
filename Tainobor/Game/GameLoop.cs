@@ -97,6 +97,7 @@ public static class GameLoop
                 {
                     PlayerFaculty = FacultyRepository.Rootbloom
                 };
+                _player.CreateSchedule();
                 break;
             case 2:
                 _isRunning = true;
@@ -104,6 +105,7 @@ public static class GameLoop
                 CreateSchool();
                 CreatePlayer();
                 TakeFacultyTest();
+                _player.CreateSchedule();
                 break;
             case 3:
                 break;
@@ -125,7 +127,8 @@ public static class GameLoop
                 MorningPeriod.HaveBreakfast();
                 break;
             case 3:
-                Console.WriteLine("Вы смотрите своё расписание");
+                Console.WriteLine("Вы смотрите своё расписание на сегодня:\n");
+                _player.ShowSchedule(_currentDayOfWeek);
                 break;
             case 4:
                 Console.WriteLine("Вы пошли на занятия");
@@ -207,7 +210,8 @@ public static class GameLoop
                 Console.WriteLine("Вы готовитесь к завтрашнему дню");
                 break;
             case 3:
-                Console.WriteLine("Вы смотрите расписание");
+                Console.WriteLine("Вы смотрите своё расписание на завтра:\n");
+                _player.ShowSchedule(_currentDayOfWeek+1);
                 break;
             case 4:
                 Console.WriteLine("Вы идёте спать");

@@ -10,4 +10,5 @@ public class MagicalSociety : Subject
 {
     public override string Name => "Мироустройство";
     public override Teacher Teacher => TeacherRepository.MagicalSocietyTeacher!;
+    public override int MinYear { get; } = 5;
 }

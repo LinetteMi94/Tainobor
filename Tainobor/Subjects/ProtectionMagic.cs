@@ -10,4 +10,5 @@ public class ProtectionMagic : Subject
 {
     public override string Name => "Обережье";
     public override Teacher Teacher => TeacherRepository.ProtectionMagicTeacher!;
+    public override int MinYear { get; } = 1;
 }

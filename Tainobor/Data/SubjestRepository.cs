@@ -9,7 +9,7 @@ namespace Tainobor.Data;
 /// </summary>
 public static class SubjectRepository
 {
-    public static List<Subject> Subjects { get; } = new();
+    public static List<Subject> Subjects { get; set; } 
     public static Alchemy Alchemy { get; } = new ();
     public static ArtifactCrafting ArtifactCrafting { get; } = new ();
     public static Divination Divination { get; } = new ();
@@ -27,6 +27,7 @@ public static class SubjectRepository
     
     public static List<Subject> CreateSubjects()
     {
+        Subjects = new List<Subject>();
         Subjects.Add(Alchemy);
         Subjects.Add(ArtifactCrafting);
         Subjects.Add(Divination);

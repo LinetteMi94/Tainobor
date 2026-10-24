@@ -10,4 +10,5 @@ public class Dueling : Subject
 {
     public override string Name => "Поединки";
     public override Teacher Teacher => TeacherRepository.DuelingTeacher;
+    public override int MinYear { get; } = 4;
 }
