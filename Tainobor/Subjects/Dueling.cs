@@ -10,5 +10,26 @@ public class Dueling : Subject
 {
     public override string Name => "Поединки";
     public override Teacher Teacher => TeacherRepository.DuelingTeacher;
-    public override int MinYear { get; } = 4;
+    protected internal override int MinYear { get; } = 4;
+    protected override List<Lesson> Lessons { get; } = [];
+    
+    protected override void CreateLessons()
+    {
+        Lessons.Add(new Lesson(4, Lesson1));
+        Lessons.Add(new Lesson(4, Lesson2));
+        Lessons.Add(new Lesson(4, Lesson3));
+    }
+
+    private void Lesson1()
+    {
+        Console.WriteLine("Это первый урок поединков");
+    }
+    private void Lesson2()
+    {
+        Console.WriteLine("Это второй урок поединков");
+    }
+    private void Lesson3()
+    {
+        Console.WriteLine("Это третий урок поединков");
+    }
 }

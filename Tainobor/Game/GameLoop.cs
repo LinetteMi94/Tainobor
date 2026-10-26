@@ -152,7 +152,10 @@ public static class GameLoop
                 _player.DisplayCharacterStats();
                 break;
             case 2:
-                Console.WriteLine("Вы посетили занятие");
+                Console.WriteLine("Вы идёте на занятие");
+                if (_currentDayOfWeek == GameDayOfWeek.Saturday || _currentDayOfWeek == GameDayOfWeek.Sunday) break;
+                var lessons = _player.PlayerSchedule.First(x => x.dayOfWeek == _currentDayOfWeek).Subjects;
+                foreach (var lesson in lessons) lesson.StartLesson();
                 StudyTimePeriod.GoToLesson();
                 _currentPeriod = DayPeriod.AfterClasses;
                 break;

@@ -1,4 +1,6 @@
-﻿namespace Tainobor.Models;
+﻿using Tainobor.GameMessages;
+
+namespace Tainobor.Models;
 
 /// <summary>
 /// Представляет базовый класс для учебных предметов Академии Тайнобор.
@@ -8,6 +10,16 @@ public abstract class Subject
     
     public abstract string Name { get; }
     public abstract Teacher Teacher { get; }
-    public abstract int MinYear { get; }
-    
+    protected internal abstract int MinYear { get; }
+    protected abstract List<Lesson> Lessons { get; }
+
+    public virtual void StartLesson()
+    {
+        CreateLessons();
+        var lesson = Lessons[0];
+        lesson.Action();
+        Lessons.RemoveAt(0);
+        //Messages.Key();
+    }
+    protected abstract void CreateLessons();
 }
