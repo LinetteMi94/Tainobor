@@ -17,7 +17,7 @@ public class Alchemy : Subject
 
     protected override List<Lesson> Lessons { get; } = [];
     
-    protected override void CreateLessons()
+    protected internal override void CreateLessons()
     {
         Lessons.Add(new Lesson(1, Lesson1));
         Lessons.Add(new Lesson(1, Lesson2));

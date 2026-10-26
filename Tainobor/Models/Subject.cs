@@ -13,13 +13,11 @@ public abstract class Subject
     protected internal abstract int MinYear { get; }
     protected abstract List<Lesson> Lessons { get; }
 
-    public virtual void StartLesson()
+    public void StartLesson()
     {
-        CreateLessons();
         var lesson = Lessons[0];
         lesson.Action();
         Lessons.RemoveAt(0);
-        //Messages.Key();
     }
-    protected abstract void CreateLessons();
+    protected internal abstract void CreateLessons();
 }

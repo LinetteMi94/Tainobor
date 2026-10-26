@@ -13,7 +13,7 @@ public class Dueling : Subject
     protected internal override int MinYear { get; } = 4;
     protected override List<Lesson> Lessons { get; } = [];
     
-    protected override void CreateLessons()
+    protected internal override void CreateLessons()
     {
         Lessons.Add(new Lesson(4, Lesson1));
         Lessons.Add(new Lesson(4, Lesson2));

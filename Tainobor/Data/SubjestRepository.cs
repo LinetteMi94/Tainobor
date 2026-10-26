@@ -42,6 +42,7 @@ public static class SubjectRepository
         Subjects.Add(ProtectionMagic);
         Subjects.Add(Runes);
         Subjects.Add(Witchcraft);
+        foreach (var subject in Subjects) subject.CreateLessons();
         return Subjects;
     }
 }

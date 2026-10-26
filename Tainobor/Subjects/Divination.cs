@@ -14,7 +14,7 @@ public class Divination : Subject
     
     protected override List<Lesson> Lessons { get; } = [];
     
-    protected override void CreateLessons()
+    protected internal override void CreateLessons()
     {
         Lessons.Add(new Lesson(2, Lesson1));
         Lessons.Add(new Lesson(2, Lesson2));

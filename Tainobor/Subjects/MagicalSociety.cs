@@ -13,7 +13,7 @@ public class MagicalSociety : Subject
     protected internal override int MinYear { get; } = 5;
     protected override List<Lesson> Lessons { get; } = [];
     
-    protected override void CreateLessons()
+    protected internal override void CreateLessons()
     {
         Lessons.Add(new Lesson(5, Lesson1));
         Lessons.Add(new Lesson(5, Lesson2));

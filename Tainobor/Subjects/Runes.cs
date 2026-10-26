@@ -13,7 +13,7 @@ public class Runes : Subject
     protected internal override int MinYear { get; } = 3;
     protected override List<Lesson> Lessons { get; } = [];
     
-    protected override void CreateLessons()
+    protected internal override void CreateLessons()
     {
         Lessons.Add(new Lesson(3, Lesson1));
         Lessons.Add(new Lesson(3, Lesson2));
