@@ -21,15 +21,15 @@ public class Divination : Subject
         Lessons.Add(new Lesson(2, Lesson3));
     }
 
-    private void Lesson1()
+    private void Lesson1(Player player)
     {
         Console.WriteLine("Это первый урок вещевания");
     }
-    private void Lesson2()
+    private void Lesson2(Player player)
     {
         Console.WriteLine("Это второй урок вещевания");
     }
-    private void Lesson3()
+    private void Lesson3(Player player)
     {
         Console.WriteLine("Это третий урок вещевания");
     }

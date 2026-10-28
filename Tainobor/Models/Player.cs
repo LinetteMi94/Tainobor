@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Tainobor.Data;
 using Tainobor.Enums;
+using Tainobor.GameMessages;
 
 namespace Tainobor.Models;
 
@@ -67,6 +68,16 @@ public class Player(string name, string lastName, Gender characterGender, int ag
             Console.WriteLine($"{character.Key}: {character.Value}");
         }
         Console.WriteLine();
+    }
+
+    /// <summary>
+    /// Увеличивает указанную характеристику игрока на 1 балл, не превышая максимального значения.
+    /// </summary>
+    /// <param name="characteristic">Характеристика, которую нужно увеличить.</param>
+    public void IncreaseCharacteristic(Characteristics characteristic, int score)
+    {
+        PlayerCharacteristics[characteristic] +=  score;
+        Messages.Print($"Характеристика {characteristic} увеличена на {score}");
     }
     
     /// <summary>

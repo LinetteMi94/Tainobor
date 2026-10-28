@@ -13,10 +13,10 @@ public abstract class Subject
     protected internal abstract int MinYear { get; }
     protected abstract List<Lesson> Lessons { get; }
 
-    public void StartLesson()
+    public void StartLesson(Player player)
     {
         var lesson = Lessons[0];
-        lesson.Action();
+        lesson.Action(player);
         Lessons.RemoveAt(0);
     }
     protected internal abstract void CreateLessons();

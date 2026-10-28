@@ -20,15 +20,15 @@ public class MagicHistory : Subject
         Lessons.Add(new Lesson(1, Lesson3));
     }
 
-    private void Lesson1()
+    private void Lesson1(Player player)
     {
         Console.WriteLine("Это первый урок летописи магического мира");
     }
-    private void Lesson2()
+    private void Lesson2(Player player)
     {
         Console.WriteLine("Это второй урок летописи магического мира");
     }
-    private void Lesson3()
+    private void Lesson3(Player player)
     {
         Console.WriteLine("Это третий урок летописи магического мира");
     }

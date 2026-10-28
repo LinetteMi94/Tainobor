@@ -20,15 +20,15 @@ public class Runes : Subject
         Lessons.Add(new Lesson(3, Lesson3));
     }
 
-    private void Lesson1()
+    private void Lesson1(Player player)
     {
         Console.WriteLine("Это первый урок рун");
     }
-    private void Lesson2()
+    private void Lesson2(Player player)
     {
         Console.WriteLine("Это второй урок рун");
     }
-    private void Lesson3()
+    private void Lesson3(Player player)
     {
         Console.WriteLine("Это третий урок рун");
     }

@@ -15,6 +15,6 @@ public static class StudyTimePeriod
     {
         if (day == GameDayOfWeek.Saturday || day == GameDayOfWeek.Sunday) return;
         var lessons = player.PlayerSchedule.First(x => x.dayOfWeek == day).Subjects;
-        foreach (var lesson in lessons) lesson.StartLesson();
+        foreach (var lesson in lessons) lesson.StartLesson(player);
     }
 }

@@ -20,15 +20,15 @@ public class ElementalMagic : Subject
         Lessons.Add(new Lesson(1, Lesson3));
     }
 
-    private void Lesson1()
+    private void Lesson1(Player player)
     {
         Console.WriteLine("Это первый урок стихиеведения");
     }
-    private void Lesson2()
+    private void Lesson2(Player player)
     {
         Console.WriteLine("Это второй урок стихиеведения");
     }
-    private void Lesson3()
+    private void Lesson3(Player player)
     {
         Console.WriteLine("Это третий урок стихиеведения");
     }
