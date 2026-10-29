@@ -26,25 +26,7 @@ public class Alchemy : Subject
         Lessons.Add(new Lesson(1, Lesson2));
         Lessons.Add(new Lesson(1, Lesson3));
     }
-
-    /// <summary>
-    /// Оценивает результат выполнения задания на основе характеристики игрока.
-    /// </summary>
-    /// <param name="player">Игрок, результат которого оценивается.</param>
-    /// <param name="characteristics">Характеристика игрока, влияющая на результат выполнения задания.</param>
-    /// <returns>Оценка за выполнение задания.</returns>
-    private LessonGrade AssessResult(Player player, Characteristics characteristics)
-    {
-        var score = player.PlayerCharacteristics[characteristics] + new Random().Next(5);
-        return score switch
-        {
-            < 4 => LessonGrade.Неудача,
-            < 6 => LessonGrade.Удовлетворительно,
-            < 8 => LessonGrade.Хорошо,
-            _ => LessonGrade.Превосходно
-        };
-    }
-
+    
     private void Lesson1(Player player)
     {
         Console.Clear();
@@ -104,7 +86,7 @@ public class Alchemy : Subject
         Messages.Print("Ты сосредоточенно берёшь нож и начинаешь нарезать корень. " +
                        "Стараясь не торопиться, ты внимательно следишь за каждым движением, " +
                        "пытаясь сделать кусочки одинаковыми.");
-        var grade = AssessResult(player, Characteristics.Ловкость);
+        var grade =  AssessResult(player, Characteristics.Ловкость);
         switch (grade)
         {
             case LessonGrade.Неудача:
