@@ -28,15 +28,12 @@ public abstract class Subject
     /// <param name="player">Игрок, результат которого оценивается.</param>
     /// <param name="characteristics">Характеристика игрока, влияющая на результат выполнения задания.</param>
     /// <returns>Оценка за выполнение задания.</returns>
-    protected LessonGrade AssessResult(Player player, Characteristics characteristics)
+    protected LessonGrade AssessResult(Player player, Characteristics characteristics, 
+        int failed, int satisfactory, int good, int score = 0)
     {
-        var score = player.PlayerCharacteristics[characteristics] + new Random().Next(5);
-        return score switch
-        {
-            < 4 => LessonGrade.Неудача,
-            < 6 => LessonGrade.Удовлетворительно,
-            < 8 => LessonGrade.Хорошо,
-            _ => LessonGrade.Превосходно
-        };
+        if (score == 0) score = player.PlayerCharacteristics[characteristics] + new Random().Next(5);
+        if (score < failed) return LessonGrade.Неудача;
+        if (score < satisfactory) return LessonGrade.Удовлетворительно;
+        return score < good ? LessonGrade.Хорошо : LessonGrade.Превосходно;
     }
 }

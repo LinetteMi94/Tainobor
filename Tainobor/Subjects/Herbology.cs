@@ -98,7 +98,7 @@ public class Herbology : Subject
                "растение, не пытайтесь сорвать его ради любопытства. Любопытство — полезное качество. " +
                "Отсутствие осторожности — уже совсем другое.\n");
        Messages.Print("Она возвращается к своим растениям, давая понять, что урок окончен.");
-       var grade =  AssessResult(player, Characteristics.Трудолюбие);
+       var grade =  AssessResult(player, Characteristics.Трудолюбие, 3 ,5 ,7);
        Messages.Print($"Ваша оценка за практическую работу {grade}");
        Messages.Print("Вы собираете вещи и выходите из теплиц");
        Messages.Key();

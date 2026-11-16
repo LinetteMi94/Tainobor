@@ -86,7 +86,7 @@ public class Alchemy : Subject
         Messages.Print("Ты сосредоточенно берёшь нож и начинаешь нарезать корень. " +
                        "Стараясь не торопиться, ты внимательно следишь за каждым движением, " +
                        "пытаясь сделать кусочки одинаковыми.");
-        var grade =  AssessResult(player, Characteristics.Ловкость);
+        var grade =  AssessResult(player, Characteristics.Ловкость, 3 ,5 ,7);
         switch (grade)
         {
             case LessonGrade.Неудача:

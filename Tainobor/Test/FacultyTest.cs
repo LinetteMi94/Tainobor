@@ -15,7 +15,7 @@ public static class FacultyTest
 {
     private static Player _player;
     
-    private static List<Question> Questions { get;}=
+    private static List<Question> Questions { get;} =
     [
         new ("Ты находишь в старой теплице неизвестное растение. Что сделаешь?", 
         [
@@ -375,6 +375,24 @@ public static class FacultyTest
                 AddPoint(effect);
             }
         }
+    }
+    
+    /// <summary>
+    /// Запускает тестирование.
+    /// </summary>
+    public static int StartTest(this Player player, List<Question> questions)
+    {
+        _player = player;
+        Console.Clear();
+        var score = 0;
+        for (int i = 0; i < questions.Count; i++)
+        {
+            AskQuestion(i);
+            var selectedOption = InputValidator.GetValidInput(null,3);
+            Answer selectedAnswer = questions[i].Answers[selectedOption - 1];
+            score += selectedAnswer.Score;
+        }
+        return score;
     }
 }
 
